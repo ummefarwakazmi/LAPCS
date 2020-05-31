@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.lapcs">
+
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission
+        android:name="android.permission.MODIFY_PHONE_STATE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_MMS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name=".InitApp.App"
+        android:allowBackup="false"
+        android:debuggable="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/lapcs_logo2_new"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/lapcs_logo2_new"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="HardcodedDebugMode"
+        tools:replace="android:allowBackup">
+
+        <!-- Service that delivers messages from the phone "quick response" -->
+
+        <!-- BroadcastReceiver that listens for incoming MMS messages -->
+
+        <activity android:name=".Activities.SaveEmergencyNumberActivity" />
+
+        <service
+            android:name=".services.SendMessageFromLockScreenService"
+            android:enabled="true"
+            android:exported="false"
+            android:stopWithTask="false" />
+
+        <receiver
+            android:name=".Receivers.ScreenStateReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".services.LockScreenSOS_Service"
+            android:enabled="true"
+            android:exported="true"
+            android:stopWithTask="false" />
+
+        <activity
+            android:name=".Activities.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/Theme.AppCompat" />
+        <activity android:name=".Activities.UpdatePasswordActivity" />
+
+        <service
+            android:name=".services.RemoveChildIntentService"
+            android:exported="false" />
+        <service
+            android:name=".services.SMSHarassmentCheckerIntentService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".Receivers.ProximityIntentReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="ACTION_PROXIMITY_ALERT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".services.SpeedSentry"
+            android:exported="false" />
+
+        <activity android:name=".Activities.ResetPasswordActivity" />
+        <activity android:name=".Activities.LockScreen" />
+
+        <service
+            android:name=".services.getInstalledApps"
+            android:exported="false" />
+
+        <activity
+            android:name=".Activities.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".services.LocationService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".services.WatchListCALLIntentService"
+            android:enabled="true"
+            android:exported="true"
+            android:stopWithTask="false" />
+        <service
+            android:name=".services.WatchListSMSIntentService"
+            android:enabled="true"
+            android:exported="true"
+            android:stopWithTask="false" /> <!-- BroadcastReceiver that listens for incoming SMS messages -->
+        <receiver
+            android:name=".Receivers.IncomingSMSReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="android.provider.Telephony.SMS_SENT" />
+                <action android:name="android.provider.Telephony.ACTION_PHONE_STATE_CHANGED" />
+                <action android:name="android.provider.Telephony.SMS_DELIVER_ACTION" />
+                <action android:name="android.provider.Telephony.SMS_DELIVER" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".services.WatchListService"
+            android:enabled="true"
+            android:exported="true"
+            android:stopWithTask="false" />
+        <service
+            android:name=".services.getPhotosIntentService"
+            android:exported="false" />
+        <service
+            android:name=".services.getContacts"
+            android:exported="false" />
+        <service
+            android:name=".services.getMessages"
+            android:exported="false" />
+        <service
+            android:name=".services.getCalls"
+            android:exported="false" />
+        <service
+            android:name=".services.TriggerEvents"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".Activities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activities.LoginParentActivity" />
+        <activity android:name=".Activities.SwitchUserActivity" />
+        <activity android:name=".Activities.LoginActivity" />
+        <activity android:name=".Activities.SignUPActivity" />
+        <activity android:name=".Activities.DeviceAdminActivity" />
+        <activity android:name=".Activities.GrantPermissionsActivity" />
+        <activity android:name=".Activities.MainActivity" />
+        <activity android:name=".Activities.SettingActivity" />
+        <activity android:name=".Activities.ReassignDeviceActivity" />
+        <activity android:name=".Activities.IntroSlider1Activity" />
+        <activity android:name=".Activities.IntroSlider2Activity" />
+        <activity android:name=".Activities.IntroSlider3Activity" />
+        <activity android:name=".Activities.IntroSlider4Activity" />
+        <activity android:name=".Activities.IntroSlider5Activity" /> <!-- Activity that also allows the user to send new SMS/MMS messages -->
+        <activity
+            android:name=".Activities.SOSMessageActivity"
+            android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SENDTO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="sms" />
+                <data android:scheme="smsto" />
+                <data android:scheme="mms" />
+                <data android:scheme="mmsto" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activities.PublicHomeActivity" />
+
+        <receiver
+            android:name=".Receivers.ControllerDeviceAdmin"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+                <action android:name="android.app.action.ACTION_PASSWORD_CHANGED" />
+                <action android:name="android.app.action.ACTION_PASSWORD_FAILED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".services.FCMMessageReceiverService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

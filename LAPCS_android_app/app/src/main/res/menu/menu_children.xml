@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <group android:id="@+id/group1"
+        >
+    <item
+        android:id="@+id/action_remove_device"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_phone_android_black_24dp"
+        android:title="@string/action_remove_device_str" />
+    </group>
+    <group  android:id="@+id/group2">
+        <item
+            android:id="@+id/action_update_avatar"
+            android:orderInCategory="101"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="@string/action_update_avatar_str" />
+    </group>
+    <group  android:id="@+id/group3">
+        <item
+            android:id="@+id/action_show_details"
+            android:orderInCategory="102"
+            android:icon="@drawable/ic_details_black_24dp"
+            android:title="@string/action_show_details_str" />
+    </group>
+
+</menu>

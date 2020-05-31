@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Welcome!"
+                android:textAlignment="center"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_home"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/text_home"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ic_logo_border"
+                android:src="@drawable/lapcs_home_2" />
+
+            <TextView
+                android:id="@+id/tv_home_str_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_home"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:lineSpacingExtra="7dp"
+                android:text="@string/home_str_1"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimaryDark2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/oleo_script" />
+
+            <TextView
+                android:id="@+id/tv_home_str_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_home_str_1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="30dp"
+                android:lineSpacingExtra="7dp"
+                android:text="@string/home_str_2"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimaryDark2"
+                android:textSize="10dp"
+                app:fontFamily="@font/bungee"
+
+                />
+
+            <TextView
+                android:id="@+id/tv_home_str_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_home_str_2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif-medium"
+                android:lineSpacingExtra="7dp"
+                android:text="@string/home_str_3"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimaryDark2"
+                android:textSize="10dp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

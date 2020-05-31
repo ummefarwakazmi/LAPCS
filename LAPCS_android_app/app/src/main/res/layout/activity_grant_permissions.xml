@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    card_view:cardBackgroundColor="#fff"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="5dp"
+    card_view:cardUseCompatPadding="true"
+    tools:context=".Activities.GrantPermissionsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/slanted_rectange">
+
+        <ScrollView
+            android:id="@+id/scroll_view_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fadeScrollbars="false"
+            android:fillViewport="true"
+            android:outlineAmbientShadowColor="@color/colorIndigo"
+            android:outlineSpotShadowColor="@color/colorIndigo"
+            android:scrollbarAlwaysDrawVerticalTrack="true">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                card_view:cardBackgroundColor="#fff"
+                card_view:cardCornerRadius="15dp"
+                card_view:cardElevation="10dp"
+                card_view:cardUseCompatPadding="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/appLogoText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="45dp"
+                        android:fontFamily="monospace"
+                        android:text="@string/app_perm_str"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/helpTextGP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/appLogoText"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="25dp"
+                        android:fontFamily="monospace"
+                        android:padding="5dp"
+                        android:text="@string/grantPermission"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+
+                    <Button
+                        android:id="@+id/PermissionButton"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradient"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_below="@+id/helpTextGP"
+                        android:paddingBottom="5dp"
+                        android:text="Grant Permissions"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorFormBackground"
+                        android:textSize="20dp" />
+
+
+                    <Button
+                        android:id="@+id/PermissionBattery"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/PermissionButton"
+                        android:background="@drawable/gradient"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:paddingBottom="5dp"
+                        android:text="Battery Optimization"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorFormBackground"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/PermissionSound"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/PermissionBattery"
+                        android:background="@drawable/gradient"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="Do Not Disturb Access"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorFormBackground"
+                        android:textSize="20dp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </ScrollView>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

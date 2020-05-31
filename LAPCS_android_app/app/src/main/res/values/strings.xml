@@ -1,0 +1,172 @@
+<resources>
+    <string name="app_name">LAPCS</string>
+    <string name="grantPermission">Grant all requested permissions to LAPCS. This is the most important step. Grant all permissions requested, otherwise you will not be able to perform all actions and application will not work properly. </string>
+    <string name="grantPermissionAdmin">Allow LAPCS to run as administrator. This is very important otherwise application will not be able to perform certain actions and may crash or act abnormally. </string>
+
+
+
+    <string name="app_perm_str">App Permissions</string>
+    <string name="app_slogan">Track Your Kid Now!</string>
+    <string name="lapcs_short_str">LOCI MOBI MINI</string>
+    <string name="lapcs_full_str">Location Aware Parenting Control System</string>
+    <string name="company_name">FARWA AND FATIMA STUDIO</string>
+    <string name="powered_by">Powered By</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="login_screen_str">Login</string>
+    <string name="register_str">"Not a member?\n<b>Create Parent Account</b>"</string>
+    <string name="forgot_password_str">Forgot Password ?</string>
+    <string name="account_exist_str">Already have Parent Account?\n<b>Click to Login</b></string>
+    <string name="login_parent_account_str">Log into your parent account \n to pair this child device</string>
+    <string name="signup_parent_account_str">Signup to create parent account</string>
+
+    <string name="switch_user_str">Switch User</string>
+    <string name="update_password_str">Update Password</string>
+    <string name="update_picture_str">Update Picture</string>
+    <string name="SOS_Message_str">SOS Message</string>
+    <string name="Send_SOS_Message_str">Send SOS Message</string>
+    <string name="send_SOS_Message_pic_str">Send SOS Message</string>
+    <string name="send_panic_alert_str">Send Panic Alert</string>
+    <string name="send_custom_message_str">Send Custom Message</string>
+    <string name="Rename_Device_str">Rename Device</string>
+    <string name="Unlink_Child_str">Unlink Child</string>
+    <string name="Emergency_num_str">Set Emergency Number</string>
+    <string name="settings_str">Settings</string>
+    <string name="other_settings_str">Other Settings</string>
+    <string name="set_SOS_Message">Set SOS Template</string>
+
+    <string name="Reassign_str">Reassign</string>
+    <string name="add_child_str">Add Child</string>
+    <string name="Update_str">Update</string>
+    <string name="pair_device_str">Pair Device</string>
+    <string name="Unlink_device_str">Unlink Device</string>
+    <string name="child_account_id_str">Child Account ID</string>
+    <string name="Signup_str">SIGN UP</string>
+    <string name="Signup_head">Sign Up</string>
+    <string name="Parent_Access_str">Parent Access</string>
+    <string name="Next_str">Next</string>
+    <string name="Logout_str">Logout</string>
+
+    <string name="Child_name_str">Child\'s Name</string>
+    <string name="Child_dev_str">Child\'s Device</string>
+    <string name="Child_dev_imei_str">Child\'s Device IMEI</string>
+
+    <string name="setting_str">Settings</string>
+    <string name="sos_str">Save Our Soul</string>
+    <string name="your_cellphone_number">Emergency Number</string>
+    <string name="child_home_str">Child Home</string>
+    <string name="phone_number_hint">Parent Phone Number</string>
+    <string name="toast_sending_sms">Sending sms…</string>
+
+    <string name="permission_alert_dialog_title">Requesting SMS permission</string>
+    <string name="permission_dialog_message">The app will now request your permission to send and read SMS related services.</string>
+
+    <string name="error_invalid_phone_number">Invalid phone number</string>
+    <string name="action_ok">OK</string>
+
+    <string name="main_activity_str">If You are Viewing this Page then Something is Wrong !!! \n \n \nPlease Contact Your Admin</string>
+
+    <string name="slide_1_desc">On your child device,go to lapcs.locimobi.com and press download.</string>
+
+    <string name="slide_2_desc">Install LociMobi ,and log in with your parent credentials</string>
+
+    <string name="slide_3_desc">Enter your child\'s name</string>
+
+    <string name="slide_4_desc">Enable access to bulk permissions</string>
+
+    <string name="slide_5_desc">Proceed to child dashboard</string>
+
+
+    <string name="Link_Str">Link My Device</string>
+    <string name="Unlink_Str">Unlink My Device</string>
+    <string name="OR_Str">OR</string>
+
+    <string name="Tracking_Enabled_Notification_Str">Location Tracking is Currently Enabled. Tap to cancel.</string>
+
+    <string name="FCM_Notification_Str">Send FCM Notification</string>
+
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Farwa Kazmi</string>
+    <string name="nav_header_subtitle">Device: OPPO A57</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">App Settings</string>
+    <string name="action_about">About Us</string>
+    <string name="action_rate">Rate Us</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_children">Children</string>
+    <string name="menu_faq">FAQ</string>
+    <string name="menu_logout">Logout</string>
+
+    <string name="lock_device">Your device has been locked by your parent. Please contact your parent to unlock the device.</string>
+
+
+    <string name="LITE_Package_Str">SUBSCRIBE LITE-PACKAGE</string>
+    <string name="XLITE_Package_Str">SUBSCRIBE XLITE-PACKAGE</string>
+
+    <string name="reset_password">Reset Password</string>
+    <string name="reset_screen_str">Reset</string>
+    <string name="password_reset_str">Enter your Registered Email</string>
+    <string name="rename_device_str">Rename your Device</string>
+
+
+    <string name="question_no_1_str">1. How to install the LAPCS App in Child Mode?</string>
+    <string name="question_no_2_str">2. What versions of Android are currently supported?</string>
+    <string name="question_no_3_str">3. What features are available with LAPCS?</string>
+    <string name="question_no_4_str">4. How can I temporarily disable LAPCS in Parent Mode?</string>
+    <string name="question_no_5_str">5. How can I temporarily disable LAPCS in Child Mode?</string>
+    <string name="question_no_6_str">6. How to uninstall the LAPCS in Child Mode?</string>
+
+
+    <string name="answer_no_1_str">Answer: Please see instructions carefully after installation on Child Device.</string>
+    <string name="answer_no_2_str">Answer: LAPCS is compatible with KITKAT (API level 19) or higher.</string>
+    <string name="answer_no_3_str">Answer: \n
+                                    1. SMS Monitoring\n
+                                    2. Call  Monitoring\n
+                                    3. Contact  Monitoring\n
+                                    4. Installed App  Monitoring\n
+                                    5. Photo  Monitoring\n
+                                    6. Location  Tracking\n
+                                    7. Contact Watch List\n
+    </string>
+
+    <string name="answer_no_4_str">Answer: To disable LAPCS in Parent Mode, Just Go To > Devices > Press \"Unlink My Device\" Button</string>
+    <string name="answer_no_5_str">Answer: To disable LAPCS in Child Mode, Just Go To > Parent Access > Login > Press \"Unlink Child\" Button</string>
+    <string name="answer_no_6_str">Answer: First of all disable admin mode and then uninstall it in usuall way</string>
+
+    <string name="faq_str">Frequently Asked Questions</string>
+
+    <string name="home_str_1">World\'s Most Powerful Parental Control App</string>
+    <string name="home_str_2">Reclaim your family moments by managing content and usage across all devices.</string>
+    <string name="home_str_3">Monitor and Manage kid\'s Cell Phone Activities like SMS, Phone Logs, Contact List, Installed Apps, Photos, Location, Geofencing and much more!</string>
+
+    <string name="action_rename_device_str">Rename Device</string>
+    <string name="action_remove_device_str">Remove Device</string>
+    <string name="action_show_details_str">Show Details</string>
+    <string name="action_update_avatar_str">Update Avatar</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="general_header">General Settings</string>
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- General Settings Preferences -->
+    <string name="update_password_key">update_password</string>
+    <string name="update_password_title">Update Password</string>
+    <string name="update_password_summary">Update your current password</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+
+</resources>

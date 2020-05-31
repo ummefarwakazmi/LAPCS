@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/faq_str"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_question_no_1_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_share"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="7dp"
+                android:text="@string/question_no_1_str"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"
+                android:textSize="10dp"
+                app:fontFamily="@font/bungee"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_answer_no_1_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_question_no_1_str"
+                android:layout_marginLeft="5dp"
+                android:lineSpacingExtra="7dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/answer_no_1_str"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"
+                android:textSize="10dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_question_no_2_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_answer_no_1_str"
+                android:layout_marginLeft="5dp"
+                app:fontFamily="@font/bungee"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="7dp"
+                android:text="@string/question_no_2_str"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_answer_no_2_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_question_no_2_str"
+                android:layout_marginLeft="5dp"
+                android:lineSpacingExtra="7dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/answer_no_2_str"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"
+                android:textSize="10dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_question_no_3_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_answer_no_2_str"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="7dp"
+                app:fontFamily="@font/bungee"
+                android:text="@string/question_no_3_str"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_answer_no_3_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_question_no_3_str"
+                android:layout_marginLeft="5dp"
+                android:lineSpacingExtra="7dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/answer_no_3_str"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"
+                android:textSize="10dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_question_no_4_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_answer_no_3_str"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="7dp"
+                app:fontFamily="@font/bungee"
+                android:text="@string/question_no_4_str"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_answer_no_4_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_question_no_4_str"
+                android:layout_marginLeft="5dp"
+                android:lineSpacingExtra="7dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/answer_no_4_str"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"
+                android:textSize="10dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_question_no_5_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_answer_no_4_str"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="7dp"
+                app:fontFamily="@font/bungee"
+                android:text="@string/question_no_5_str"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_answer_no_5_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_question_no_5_str"
+                android:layout_marginLeft="5dp"
+                android:lineSpacingExtra="7dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/answer_no_5_str"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"
+                android:textSize="10dp"
+                />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

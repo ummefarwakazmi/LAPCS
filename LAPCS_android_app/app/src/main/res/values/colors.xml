@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <color name="colorPrimary">#008577</color>-->
+<!--    <color name="colorPrimaryDark">#00574B</color>-->
+<!--    <color name="colorAccent">#D81B60</color>-->
+<!--    <color name="statusBar">#e00d1216</color>-->
+
+    <color name="colorPrimary">#01C7D0</color>
+    <color name="colorPrimaryDark">#1CAFC1</color>
+    <color name="colorPrimaryDark2">#0a5b85</color>
+    <color name="colorAccent">#FB812C</color>
+    <color name="colorYKISN">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorIndigo">#9C27B0</color>
+    <color name="colorFormBackground">#e4e4e4</color>
+    <color name="colorGray">#888888</color>
+    <color name="colorGrayLight">#24888888</color>
+    <color name="colorIndigo2">#AA00D7</color>
+    <color name="colorWhiteShade">#F5F7FA</color>
+
+
+</resources>

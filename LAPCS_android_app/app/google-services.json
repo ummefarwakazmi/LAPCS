@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "537335355951",
+    "firebase_url": "https://lapcs-24113.firebaseio.com",
+    "project_id": "lapcs-24113",
+    "storage_bucket": "lapcs-24113.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537335355951:android:5ec7b2a9ccc7bbe4cd04da",
+        "android_client_info": {
+          "package_name": "com.example.lapcs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537335355951-q68b8vqqq9l52nkkj5uge5noeeu61quh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMbZ0VZZZQWdqOWU8u5Xwf3mo26pwm3UY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537335355951-q68b8vqqq9l52nkkj5uge5noeeu61quh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
