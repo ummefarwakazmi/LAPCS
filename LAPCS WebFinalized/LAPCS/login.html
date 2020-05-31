@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Login - LAPCS</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            body
+            {
+        background-image: url("login1.jpg");
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+        <script src="js/loadFirebase.js"></script>
+    </head>
+    <body class="bg-primary">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Email</label><input class="form-control py-4" id="inputEmailAddress" type="email" placeholder="Enter email address" /></div>
+                                            <div class="form-group"><label class="small mb-1" for="inputPassword">Password</label><input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password"/></div>
+                                           
+                                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a class="small" href="password.html">Forgot Password?</a><button class="btn btn-primary" type="button" onclick="Register()">Login</button></div>                                      </form>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div id="layoutAuthentication_footer">
+                <footer class="py-3 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted"><b>Copyright &copy; 2019-2020. Final Year Project By Fatima & Farwa. </b><i>All Rights Reserved.</i></div>
+                            <div>
+                                <a href="privacyp.html">Privacy Policy</a>
+                                &middot;
+                                <a href="tc.html">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script>
+            function Register() {
+            var email = document.getElementById("inputEmailAddress").value;
+            var password = document.getElementById("inputPassword").value;
+            var user;
+            if (email == "" || password == "") {
+                window.alert("Fields Empty")
+            }
+            else {
+                firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
+                    user = firebase.auth().currentUser;
+                    $.post("Redirect.php", { userName: user.displayName, userEmail: email, userPass: password, userID: user.uid }, function (data) {
+                        if (data == "success") {
+                                window.location.href = "index.php";
+                        }
+                        else
+                            window.alert("Try Again");
+                    });
+                    //window.location.href = "index.php";
+
+                }).catch(function (error) {
+                    var errorMessage = error.message;
+                    window.alert(errorMessage);
+                });
+            }
+        }
+        </script>
+    </body>
+</html>

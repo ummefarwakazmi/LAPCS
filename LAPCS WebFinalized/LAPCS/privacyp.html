@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Parent Dashboard</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" > <img src="logo.jpg" alt="lapcs logo" class="align-self-start rounded-circle" style="width:40px;">
+            </a> 
+            <a class="navbar-brand" href="index.php">LAPCS</a>
+            
+            <button class="btn btn-link order-1 order-lg-1" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button> 
+          
+            <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="login.html">Logout</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="privacyp.html" >Privacy Policy</a>
+                        <a class="dropdown-item" href="tc.html" >Terms & Conditions</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <a class="nav-link" href="privacyp.html"
+                                ><div class="sb-nav-link-icon"><i class="fas fa-lock"></i></div>
+                                <b>Privacy Policy</b>
+                              
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth"
+                                        >Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
+                                    ></a>
+                                </nav>
+                            </div>
+                         
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <h1 class="mt-4">Privacy Policy</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Privacy Policy</li>
+                        </ol>
+                        <div class="row">
+							<div class='col-md-12'>
+								<div class='list-group' id='messageList'>
+									<p class="text-justify">Welcome to Location Aware Parenting Control System privacy policy. This site is provided as a service to our visitors and may be used for informational purposes only,
+                                        please read them carefully.</p> <h6>1. User Rights</h6>
+                                    <p class="text-justify">You have rights under data protection laws in relation to your personal Account Data. You have the right to: <br> <br>
+                                        <b>Request access</b> to your personal data (commonly known as a "data subject access request"). This enables you to receive a copy of the personal data we hold about you and to check that we are lawfully processing it. <br> <br>
+                                        <b>Request correction</b> of the personal data that we hold about you. This enables you to have any incomplete or inaccurate data we hold about you corrected, though we may need to verify the accuracy of the new data you provide to us. <br> <br>
+                                        <b>Request erasure</b> of your personal data. This enables you to ask us to delete or remove personal data where there is no good reason for us continuing to process it. You also have the right to ask us to delete or remove your personal data where you have successfully exercised your right to object to processing, where we may have processed your information unlawfully or where we are required to erase your personal data to comply with local law. Note, however, that we may not always be able to comply with your request of erasure for specific legal reasons which will be notified to you, if applicable, at the time of your request.<br> <br>
+                                        <b>Object to processing</b> of your personal data where we are relying on a legitimate interest (or those of a third party) and there is something about your particular situation which makes you want to object to processing on this ground as you feel it impacts on your fundamental rights and freedoms. You also have the right to object where we are processing your personal data for marketing purposes. In some cases, we may demonstrate that we have compelling legitimate grounds to process your information which override your rights. <br> <br>
+                                        <b>Request restriction</b> of processing of your personal data. This enables you to ask us to suspend the processing of your personal data in the following scenarios: (a) if you want us to establish the data's accuracy; (b) where our use of the data is unlawful but you do not want us to erase it; (c) where you need us to hold the data even if we no longer require it as you need it to establish, exercise or defend legal claims; or (d) you have objected to our use of your data but we need to verify whether we have overriding legitimate grounds to use it. <br> <br>
+                                        <b>Request the transfer</b> of your personal data to you or to a third party. We will provide to you, or a third party you have chosen, your personal data in a structured, commonly used, machine-readable format. Note that this right only applies to automated information which you initially provided consent for us to use or where we used the information to perform a contract with you. <br> <br>
+                                        <b>Withdraw consent at any time</b> where we are relying on consent to process your personal data. However, this will not affect the lawfulness of any processing carried out before you withdraw your consent. If you withdraw your consent, we may not be able to provide certain products or services to you. We will advise you if this is the case at the time you withdraw your consent.</p>
+          <h6>2. Data Security</h6>  
+          <p class="text-justify">We have adopted technical and organizational measures to preserve and protect your personal information from unauthorized use or access and from being altered, lost or misused, taking into account the technological state of art, the features of the information stored and the risks to which information is exposed. However, due to the nature of the information and related technology, we cannot ensure or guarantee the security of your personal information and expressly disclaims any such obligation. If we learn of a security breach, then we will attempt to notify you electronically so that you can take appropriate steps.</p>                    
+<h6>3. Data Use and Processing</h6> <p class="text-justify">Subscriber information is processed to administer the account including establishing and authenticating the Subscriber account as well as communicating with the Subscriber.
+
+    Additional subscriber information is provided by the Subscriber if they chose to and is collected for the purposes of maintaining the account and product subscription.</p>
+        </div>
+								
+							</div>
+						</div>
+                        
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted"><b>Copyright &copy; 2019-2020. Final Year Project By Fatima & Farwa. </b><i>All Rights Reserved.</i></div>
+                            <div>
+                                <a href="privacyp.html">Privacy Policy</a>
+                                &middot;
+                                <a href="tc.html">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="assets/demo/chart-pie-demo.js"></script>
+    </body>
+</html>
