@@ -26,7 +26,7 @@ else{
 
 
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9di4Di943uRAHaU1ZKkmXPXNe-hA_YGM&libraries=places"
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=zaSyB9di4Di943uRAHaU1ZKkmXPXNe-hA_YGM&libraries=places"
             type="text/javascript"></script>
     <!-- RSVP -->
     <script src="https://cdn.jsdelivr.net/npm/rsvp@4/dist/rsvp.min.js"></script>
