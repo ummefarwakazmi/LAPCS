@@ -112,7 +112,7 @@ public class LockScreen extends Activity {
             @Override
             public void onClick(View v) {
                 Log.d(AppConsts.TAG,"Pressed SEND_ALERT_ACTION");
-                Toast.makeText(getApplicationContext(),"Sending Panic Alert...", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Sending Panic Alert...", Toast.LENGTH_SHORT).show();
 
                 parentDeviceTokenID = sharedPreferences.getString("ParentDeviceToken", "");
 
@@ -122,7 +122,7 @@ public class LockScreen extends Activity {
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_SHORT).show();
                 }
             }
         });

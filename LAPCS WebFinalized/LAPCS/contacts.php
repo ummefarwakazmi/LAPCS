@@ -17,6 +17,11 @@ else{
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Parent Dashboard</title>
+    <style>
+        .breadcrumb {
+            margin-top: 25px !important;
+        }
+    </style>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
@@ -30,7 +35,7 @@ else{
 </head>
 <body class="sb-nav-fixed">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand" > <img src="logo.jpg" alt="lapcs logo" class="align-self-start rounded-circle" style="width:40px;">
+    <a class="navbar-brand" > <img src="logo.jpeg" alt="lapcs logo" class="align-self-start rounded-circle" style="width:40px;">
     </a>
     <a class="navbar-brand" href="index.php">LAPCS</a>
 
@@ -79,6 +84,9 @@ else{
                                 <a class="nav-link" href="SocialApp.php"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                                 Social Apps</a>
+                    <a class="nav-link" href="SocialAppUsageStats.php"
+                    ><div class="sb-nav-link-icon"><i class="fas fa-clock"></i></div>
+                        Social Apps Usage</a>
                                 <a class="nav-link" href="Photo.php"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-camera"></i></div>
                                 Photos</a>
@@ -103,7 +111,7 @@ else{
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
-                <h1 class="mt-4">Contacts</h1>
+
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
                     <li class="breadcrumb-item active">Contacts</li>
@@ -274,6 +282,25 @@ setCurrentMobile(selectedDeviceIs);
                     if($.inArray(el, filesFetched) === -1)
                         filesFetched.push(el);
                 });
+
+                table.clear().draw();
+
+                for (var i = 2; i < filesFetched.length; i++) {
+                    var ContactName = filesFetched[i].split("Number:").shift().trim();
+                    //alert(ContactName);
+                    ContactName = ContactName.replace(/Name:/, "");
+                    //alert(ContactName);
+
+                    var ContactNumber = filesFetched[i].split("Number:").pop().trim();
+                    //alert(ContactNumber);
+
+                    $('#dataTable').dataTable().fnAddData( [
+                        i-1,
+                        ContactName,
+                        ContactNumber,
+                    ] );
+
+                }
             }
         });
         var triggerRef = database.ref().child('Users').child(userID).child(localStorage.getItem("SelectedDevice")).child('trigger');
@@ -315,24 +342,7 @@ setCurrentMobile(selectedDeviceIs);
             var ref = database.ref().child('Users').child(userID).child(localStorage.getItem("SelectedDevice")).child('trigger').set("NA");
             var ref = database.ref().child('Users').child(userID).child(localStorage.getItem("SelectedDevice")).child('trigger').set(localStorage.getItem("SelectedDevice") + "/contacts");
 
-            table.clear().draw();
 
-            for (var i = 2; i < filesFetched.length; i++) {
-                var ContactName = filesFetched[i].split("Number:").shift().trim();
-                //alert(ContactName);
-                ContactName = ContactName.replace(/Name:/, "");
-                //alert(ContactName);
-
-                var ContactNumber = filesFetched[i].split("Number:").pop().trim();
-                //alert(ContactNumber);
-
-                $('#dataTable').dataTable().fnAddData( [
-                    i-1,
-                    ContactName,
-                    ContactNumber,
-                ] );
-
-            }
         }
 
     }

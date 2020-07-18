@@ -18,34 +18,34 @@
             android:background="@color/colorYKISN"
             >
 
-            <ImageView
-                android:id="@+id/splash_img"
-                android:layout_width="194dp"
-                android:layout_height="236dp"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/lapcs_logo2_new"
-                />
-<!--                android:layout_marginTop="20dp"-->
-
             <TextView
                 android:id="@+id/tv_lapcs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
-                android:layout_below="@id/splash_img"
+                android:layout_marginTop="65dp"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="monospace"
                 android:textSize="50sp"
                 android:textAlignment="center"
                 android:textStyle="bold"
-                android:textColor="@color/colorIndigo2"
+                android:textColor="@color/indigologo"
                 />
 
+            <ImageView
+                android:id="@+id/splash_img"
+                android:layout_width="194dp"
+                android:layout_height="236dp"
+                android:layout_below="@id/tv_lapcs"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/lapcs_logo2_new"
+                />
+<!--                android:layout_marginTop="20dp"-->
             <TextView
                 android:id="@+id/tv_ykisn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_lapcs"
+                android:layout_below="@id/splash_img"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="10dp"
@@ -53,9 +53,12 @@
                 android:textColor="@color/colorBlack"
                 android:textSize="30dp"
                 android:textStyle="bold"
-                app:fontFamily="@font/oleo_script"
+                app:fontFamily="@font/calibri_regular"
 
                 />
+
+
+
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -80,7 +83,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="5dp"
-                android:fontFamily="monospace"
+                android:fontFamily="@font/calibri_regular"
                 android:text="@string/powered_by"
                 android:textColor="@color/colorBlack"
                 android:textSize="20dp"
@@ -98,10 +101,10 @@
                 android:fontFamily="sans-serif"
                 android:text="@string/company_name"
                 android:textAlignment="center"
-                android:textColor="@color/colorIndigo2"
+                android:textColor="@color/indigologo"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                app:fontFamily="monospace" />
+                app:fontFamily="@font/calibri_regular" />
 
         </RelativeLayout>
     </ScrollView>

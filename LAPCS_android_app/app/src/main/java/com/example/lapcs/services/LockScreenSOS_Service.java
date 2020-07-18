@@ -41,7 +41,7 @@ public class LockScreenSOS_Service extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         // do some extra things
         Log.d(TAG,this.getClass().getName()+"onStartCommand: LockScreenSOS_Service Started");
-        Toast.makeText(getApplicationContext(),"LockScreenSOS_Service Started",Toast.LENGTH_SHORT);
+       // Toast.makeText(getApplicationContext(),"LockScreenSOS_Service Started",Toast.LENGTH_SHORT);
         IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction(Intent.ACTION_USER_PRESENT);
@@ -55,7 +55,7 @@ public class LockScreenSOS_Service extends Service {
     @Override
     public void onTaskRemoved(Intent rootIntent) {
         Log.d(TAG,"On Task Removed: LockScreenSOS_Service Restarted");
-        Toast.makeText(getApplicationContext(),"LockScreenSOS_Service Restarted",Toast.LENGTH_SHORT);
+        //Toast.makeText(getApplicationContext(),"LockScreenSOS_Service Restarted",Toast.LENGTH_SHORT);
 
         Intent restartServiceSOS_Service = new Intent(getApplicationContext(), this.getClass());
         restartServiceSOS_Service.setPackage(getPackageName());
@@ -70,7 +70,7 @@ public class LockScreenSOS_Service extends Service {
     public void onDestroy() {
 
         Log.d(AppConsts.TAG, this.getClass().getName()+": onDestroy(): SOS Service Destroyed");
-        Toast.makeText(getApplicationContext(),"SOS Service Destroyed",Toast.LENGTH_SHORT);
+       // Toast.makeText(getApplicationContext(),"SOS Service Destroyed",Toast.LENGTH_SHORT);
 
         // release receiver
         if (mScreenStateReceiver != null)

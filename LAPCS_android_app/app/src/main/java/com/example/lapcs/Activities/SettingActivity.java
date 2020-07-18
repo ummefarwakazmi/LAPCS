@@ -1,8 +1,10 @@
 package com.example.lapcs.Activities;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -24,6 +26,10 @@ public class SettingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.indigologo));
+        }
         setContentView(R.layout.activity_setting);
 
         mAuth = FirebaseAuth.getInstance();
@@ -33,7 +39,7 @@ public class SettingActivity extends AppCompatActivity {
         BtnUpdateProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(SettingActivity.this,"Update Password Button Pressed!" ,Toast.LENGTH_LONG).show();
+                //Toast.makeText(SettingActivity.this,"Update Password Button Pressed!" ,Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SettingActivity.this,UpdatePasswordActivity.class);
                 startActivity(intent);
             }

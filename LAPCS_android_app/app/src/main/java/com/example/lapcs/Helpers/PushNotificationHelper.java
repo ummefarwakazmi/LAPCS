@@ -58,25 +58,25 @@ public class PushNotificationHelper {
 
                     try
                     {
-                        Toast.makeText(context,"FCM Notification Sent Successfully.", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(context,"FCM Notification Sent Successfully.", Toast.LENGTH_SHORT).show();
                     }
                     catch (Exception ex)
                     {
                         Log.d(AppConsts.TAG, "FCM Notification Exception "+ ex.getMessage());
-                        Toast.makeText(context,"FCM Notification Exception "+ex.getMessage().toString(), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(context,"FCM Notification Exception "+ex.getMessage().toString(), Toast.LENGTH_SHORT).show();
                     }
 
                 }
                 @Override
                 public void onFailure(Call<ResponseBody> call, Throwable t) {
                     Log.d(AppConsts.TAG, "FCM Notification Sending Failed "+ t.getMessage());
-                    Toast.makeText(context,"FCM Notification Sending Failed "+t.getMessage(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(context,"FCM Notification Sending Failed "+t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         }
         else
         {
-            Toast.makeText(context,"Can't Send Notification !! Your Device is Not Linked.", Toast.LENGTH_LONG).show();
+            //Toast.makeText(context,"Can't Send Notification !! Your Device is Not Linked.", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -95,7 +95,7 @@ public class PushNotificationHelper {
                 ("".equals(userID.toString())) && (TextUtils.isEmpty(userID.toString()))
         )
         {
-            Toast.makeText(context,"Imei and userID is empty !!", Toast.LENGTH_LONG).show();
+            //Toast.makeText(context,"Imei and userID is empty !!", Toast.LENGTH_SHORT).show();
             Log.d(TAG,PushNotificationHelper.class.getName()+": "+"Imei and userID is empty !!");
         }
         else

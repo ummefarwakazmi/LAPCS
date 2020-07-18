@@ -110,7 +110,7 @@ public class IncomingSMSReceiver extends BroadcastReceiver {
                         eventStartTime = SMSInfo.GetCurrentTime();
 
                         ///live data to firebase
-                        Toast.makeText(context, phone + ": " + message+" at "+eventStartTime, Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(context, phone + ": " + message+" at "+eventStartTime, Toast.LENGTH_SHORT).show();
                         Log.d(TAG, "Phone: " + phone + "     Message: " + message+" at "+eventStartTime);
 
                         //////////////////////////////////////////////////////////
@@ -259,7 +259,7 @@ public class IncomingSMSReceiver extends BroadcastReceiver {
                 number = intent.getStringExtra(Intent.EXTRA_PHONE_NUMBER);
 
 
-                Toast.makeText(context, "Outgoing call to: " + intent.getStringExtra(Intent.EXTRA_PHONE_NUMBER)+" at "+eventStartTime, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Outgoing call to: " + intent.getStringExtra(Intent.EXTRA_PHONE_NUMBER)+" at "+eventStartTime, Toast.LENGTH_SHORT).show();
                 Log.d(TAG, "Outgoing call to: " + intent.getStringExtra(Intent.EXTRA_PHONE_NUMBER)+" at "+eventStartTime);
 
 

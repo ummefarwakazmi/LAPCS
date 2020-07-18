@@ -49,11 +49,11 @@
                         android:layout_marginTop="35dp"
                         android:layout_marginBottom="30dp"
                         android:layout_toEndOf="@+id/img_app"
-                        android:fontFamily="monospace"
+                        android:fontFamily="@font/calibri_regular"
                         android:text="@string/child_home_str"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
                         android:textColor="@color/colorBlack"
-                        android:textSize="30sp"
+                        android:textSize="35sp"
                         android:textAllCaps="true"
                         android:textStyle="bold" />
 

@@ -57,7 +57,7 @@ public class SendMessageFromLockScreenService extends Service {
             else if(intent.getAction().equals(LOCKSCREEN_SOS_ALERT_INTENT))
             {
                 Log.d(AppConsts.TAG,"Pressed SEND_ALERT_ACTION");
-                Toast.makeText(getApplicationContext(),"Sending Panic Alert...", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Sending Panic Alert...", Toast.LENGTH_SHORT).show();
 
                 parentDeviceTokenID = sharedPreferences.getString("ParentDeviceToken", "");
 
@@ -67,7 +67,7 @@ public class SendMessageFromLockScreenService extends Service {
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -95,7 +95,7 @@ public class SendMessageFromLockScreenService extends Service {
     @Override
     public void onTaskRemoved(Intent rootIntent) {
         Log.d(TAG,"On Task Removed: SendMessageFromLockScreenService Restarted");
-        Toast.makeText(getApplicationContext(),"SendMessageFromLockScreenService Restarted",Toast.LENGTH_SHORT);
+        //Toast.makeText(getApplicationContext(),"SendMessageFromLockScreenService Restarted",Toast.LENGTH_SHORT);
 
         Intent restartLockScreenServiceIntent = new Intent(getApplicationContext(), this.getClass());
         restartLockScreenServiceIntent.setPackage(getPackageName());
@@ -125,7 +125,7 @@ public class SendMessageFromLockScreenService extends Service {
     public void onDestroy() {
 
         Log.d(AppConsts.TAG, this.getClass().getName()+": onDestroy(): SendMessageFromLockScreenService Destroyed");
-        Toast.makeText(getApplicationContext(),"SendMessageFromLockScreenService Destroyed",Toast.LENGTH_SHORT);
+        //Toast.makeText(getApplicationContext(),"SendMessageFromLockScreenService Destroyed",Toast.LENGTH_SHORT);
 
         // release receiver
         if (mLockScreenSOSAlertReceiver != null)

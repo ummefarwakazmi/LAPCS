@@ -7,9 +7,11 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -36,6 +38,10 @@ public class ResetPasswordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorIndigo));
+        }
         setContentView(R.layout.activity_reset_password);
 
 
@@ -117,7 +123,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
                         if(task.isSuccessful())
                         {
-                            Toast.makeText(ResetPasswordActivity.this,"We have sent you Email to Reset your password!" ,Toast.LENGTH_LONG).show();
+                            Toast.makeText(ResetPasswordActivity.this,"We have sent you Email to Reset your password!" ,Toast.LENGTH_SHORT).show();
 
                             if(sharedPreferences.getString("Mode", "").equalsIgnoreCase("ParentActivity"))
                             {
@@ -139,7 +145,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                         }
                         else
                         {
-                            Toast.makeText(ResetPasswordActivity.this,"Failed to Send Reset Email!",Toast.LENGTH_LONG).show();
+                            Toast.makeText(ResetPasswordActivity.this,"Failed to Send Reset Email!",Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
                         }
                     }

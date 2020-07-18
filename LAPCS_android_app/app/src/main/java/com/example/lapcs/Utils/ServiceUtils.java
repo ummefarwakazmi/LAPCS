@@ -14,8 +14,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-
-import com.android.internal.telephony.ITelephony;
 import com.example.lapcs.Activities.MainActivity;
 import com.example.lapcs.AppConsts;
 import com.example.lapcs.models.CallInfo;
@@ -145,7 +143,7 @@ public class ServiceUtils {
 
     public static void updateMobileDataInFireBase(Context context, String childIMEI, String mobileData )
     {
-        Toast.makeText(context, "Data Change Showing from Service Utils: childIMEI: "+childIMEI+" Device Name: "+mobileData , Toast.LENGTH_SHORT).show();
+       // Toast.makeText(context, "Data Change Showing from Service Utils: childIMEI: "+childIMEI+" Device Name: "+mobileData , Toast.LENGTH_SHORT).show();
 
         DatabaseReference mDatabase;
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -155,7 +153,7 @@ public class ServiceUtils {
 
     public static void updateTriggerInFireBase(Context context, String childIMEI, String mobileData )
     {
-        Toast.makeText(context, "Data Change Showing from Service Utils: childIMEI: "+childIMEI+" Device Name: "+mobileData , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context, "Data Change Showing from Service Utils: childIMEI: "+childIMEI+" Device Name: "+mobileData , Toast.LENGTH_SHORT).show();
 
         SharedPreferences sharedPreferences;
         sharedPreferences = context.getSharedPreferences("MyData", Context.MODE_PRIVATE);
@@ -179,60 +177,60 @@ public class ServiceUtils {
         else
         {
             Log.d(TAG,"userID is empty !!");
-            Toast.makeText(context, " Device "+mobileData + " Can't be Removed because User ID is empty !!" , Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, " Device "+mobileData + " Can't be Removed because User ID is empty !!" , Toast.LENGTH_SHORT).show();
 
         }
 
     }
 
-    public static void BlockIncomingOrOutgoingCalls(Context context) {
-        try
-        {
-
-            boolean isMuteAlreadyON = false;
-            AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
-
-            int rignerModeState = audioManager.getRingerMode();
-
-            if( rignerModeState == AudioManager.RINGER_MODE_SILENT || rignerModeState == AudioManager.RINGER_MODE_VIBRATE )
-            {
-                Log.d(TAG, ServiceUtils.class.getName()+": Mute is Already Turned ON . . . ");
-                isMuteAlreadyON = true;
-            }
-            else
-            {
-                Log.d(TAG, ServiceUtils.class.getName()+": Turning ON the Mute . . . ");
-                isMuteAlreadyON = false;
-                //Turn ON the mute
-                audioManager.setStreamMute(AudioManager.STREAM_RING, true);
-            }
-
-            Log.d(TAG, ServiceUtils.class.getName()+": Call Ending Started . . . ");
-            // Java reflection to gain access to TelephonyManager's
-            // ITelephony getter
-            TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-            Class c = Class.forName(tm.getClass().getName());
-            Method m = c.getDeclaredMethod("getITelephony");
-            m.setAccessible(true);
-            com.android.internal.telephony.ITelephony telephonyService = (ITelephony) m.invoke(tm);
-            telephonyService = (ITelephony) m.invoke(tm);
-            //
-            telephonyService.silenceRinger();
-            telephonyService.endCall();
-            Log.d(TAG, ServiceUtils.class.getName()+": Call Ending Done . . . ");
-
-            if(isMuteAlreadyON == false)
-            {
-                Log.d(TAG, ServiceUtils.class.getName()+": Turning OFF the Mute . . . ");
-                //Turn OFF the mute
-                audioManager.setStreamMute(AudioManager.STREAM_RING, false);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.d(TAG, ServiceUtils.class.getName()+": Call Ending Exception Thrown . . . ");
-        }
-    }
+//    public static void BlockIncomingOrOutgoingCalls(Context context) {
+//        try
+//        {
+//
+//            boolean isMuteAlreadyON = false;
+//            AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
+//
+//            int rignerModeState = audioManager.getRingerMode();
+//
+//            if( rignerModeState == AudioManager.RINGER_MODE_SILENT || rignerModeState == AudioManager.RINGER_MODE_VIBRATE )
+//            {
+//                Log.d(TAG, ServiceUtils.class.getName()+": Mute is Already Turned ON . . . ");
+//                isMuteAlreadyON = true;
+//            }
+//            else
+//            {
+//                Log.d(TAG, ServiceUtils.class.getName()+": Turning ON the Mute . . . ");
+//                isMuteAlreadyON = false;
+//                //Turn ON the mute
+//                audioManager.setStreamMute(AudioManager.STREAM_RING, true);
+//            }
+//
+//            Log.d(TAG, ServiceUtils.class.getName()+": Call Ending Started . . . ");
+//            // Java reflection to gain access to TelephonyManager's
+//            // ITelephony getter
+//            TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+//            Class c = Class.forName(tm.getClass().getName());
+//            Method m = c.getDeclaredMethod("getITelephony");
+//            m.setAccessible(true);
+//            com.android.internal.telephony.ITelephony telephonyService = (ITelephony) m.invoke(tm);
+//            telephonyService = (ITelephony) m.invoke(tm);
+//            //
+//            telephonyService.silenceRinger();
+//            telephonyService.endCall();
+//            Log.d(TAG, ServiceUtils.class.getName()+": Call Ending Done . . . ");
+//
+//            if(isMuteAlreadyON == false)
+//            {
+//                Log.d(TAG, ServiceUtils.class.getName()+": Turning OFF the Mute . . . ");
+//                //Turn OFF the mute
+//                audioManager.setStreamMute(AudioManager.STREAM_RING, false);
+//            }
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            Log.d(TAG, ServiceUtils.class.getName()+": Call Ending Exception Thrown . . . ");
+//        }
+//    }
 
     public static void updateTriggerForBlockCallInFireBase(Context context, String blockCallMSg )
     {

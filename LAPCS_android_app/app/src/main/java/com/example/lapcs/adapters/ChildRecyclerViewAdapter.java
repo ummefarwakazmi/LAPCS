@@ -63,7 +63,8 @@ public class ChildRecyclerViewAdapter extends RecyclerView.Adapter<ChildRecycler
         Child Child = MyChildList.get(position);
         holder.ChildName.setText(Child.getChildName());
         holder.ChildIMEI.setText(Child.getChildDevice());
-        holder.childImage.setImageResource(R.drawable.ic_phonelink_setup_black_24dp);
+        holder.childImage.setImageResource(R.drawable.mobile);
+
 
         holder.overflow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +87,7 @@ public class ChildRecyclerViewAdapter extends RecyclerView.Adapter<ChildRecycler
         PopupMenu popup = new PopupMenu(mContext, view);
 
 
-        Toast.makeText(mContext, "Just Clicked on  showPopupMenu" + " and Position is " + position, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(mContext, "Just Clicked on  showPopupMenu" + " and Position is " + position, Toast.LENGTH_SHORT).show();
 
         try {
             Field[] fields = popup.getClass().getDeclaredFields();
@@ -140,7 +141,7 @@ public class ChildRecyclerViewAdapter extends RecyclerView.Adapter<ChildRecycler
                     ChildIMEI = (TextView) v.findViewById(R.id.tv_childIMEI);
                     String childIMEI = (String) ChildIMEI.getText();
 
-                    Toast.makeText(mContext, "Long Clicked on Item " + " and Position is " + getAdapterPosition() + " and selectedName is =" + selectedName, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(mContext, "Long Clicked on Item " + " and Position is " + getAdapterPosition() + " and selectedName is =" + selectedName, Toast.LENGTH_SHORT).show();
 
                     LayoutInflater li = LayoutInflater.from(mContext);
                     View promptsView = li.inflate(R.layout.dialog_rename_child, null);
@@ -168,7 +169,7 @@ public class ChildRecyclerViewAdapter extends RecyclerView.Adapter<ChildRecycler
                     BtnReassign.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Toast.makeText(mContext, "Reaasign Button Pressed! ", Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(mContext, "Reaasign Button Pressed! ", Toast.LENGTH_SHORT).show();
 
                             String newName = editTextReassign.getText().toString();
                             if (!selectedName.equals(newName)) {
@@ -185,7 +186,7 @@ public class ChildRecyclerViewAdapter extends RecyclerView.Adapter<ChildRecycler
                                 MyChildList.remove(selectedItemId);
                                 notifyItemRemoved(selectedItemId);
                             } else {
-                                Toast.makeText(mContext, "Device Name not Changed! ", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(mContext, "Device Name not Changed! ", Toast.LENGTH_SHORT).show();
                             }
 
                             alertDialog.dismiss();
@@ -203,7 +204,7 @@ public class ChildRecyclerViewAdapter extends RecyclerView.Adapter<ChildRecycler
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(mContext, "Just Clicked on Item " + " and Position is " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(mContext, "Just Clicked on Item " + " and Position is " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -235,7 +236,7 @@ public class ChildRecyclerViewAdapter extends RecyclerView.Adapter<ChildRecycler
                         }
 
                         Log.d(TAG, "MyMenuItemClickListener: onMenuItemClick:  Child to Remove=" + new Gson().toJson(child));
-                        Toast.makeText(mContext, "Child To Remove=" + child.getChildName(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(mContext, "Child To Remove=" + child.getChildName(), Toast.LENGTH_SHORT).show();
                         notifyDataSetChanged();
                         MyChildList.remove(selectedItemId);
                         notifyItemRemoved(selectedItemId);
@@ -244,12 +245,12 @@ public class ChildRecyclerViewAdapter extends RecyclerView.Adapter<ChildRecycler
                     }
 
                     return true;
-                case R.id.action_update_avatar:
-                    Toast.makeText(mContext, "Update Mobile Icon", Toast.LENGTH_SHORT).show();
-                    return true;
-                case R.id.action_show_details:
-                    Toast.makeText(mContext, "Show More Details", Toast.LENGTH_SHORT).show();
-                    return true;
+//                case R.id.action_update_avatar:
+//                    Toast.makeText(mContext, "Update Mobile Icon", Toast.LENGTH_SHORT).show();
+//                    return true;
+//                case R.id.action_show_details:
+//                    Toast.makeText(mContext, "Show More Details", Toast.LENGTH_SHORT).show();
+//                    return true;
                 default:
             }
             return false;

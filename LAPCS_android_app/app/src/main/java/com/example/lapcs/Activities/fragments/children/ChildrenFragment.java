@@ -143,14 +143,14 @@ public class ChildrenFragment extends Fragment {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 System.out.println("The read failed: " + databaseError.getMessage());
-                Toast.makeText(getActivity(), "The read failed: " + databaseError.getMessage(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity(), "The read failed: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
                 Log.d(TAG,this.getClass().getName()+": "+"The read failed: " + databaseError.getMessage());
             }
 
         });
 
 
-        final TextView textView = root.findViewById(R.id.text_tools);
+      //  final TextView textView = root.findViewById(R.id.text_tools);
 
         return root;
     }

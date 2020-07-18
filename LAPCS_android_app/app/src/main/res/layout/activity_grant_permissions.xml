@@ -47,7 +47,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="45dp"
-                        android:fontFamily="monospace"
+                        android:fontFamily="@font/calibri_regular"
                         android:text="@string/app_perm_str"
                         android:textAlignment="center"
                         android:textColor="@color/colorBlack"
@@ -62,10 +62,11 @@
                         android:layout_marginLeft="25dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="25dp"
-                        android:fontFamily="monospace"
+                        android:fontFamily="@font/calibri_regular"
                         android:padding="5dp"
                         android:text="@string/grantPermission"
-                        android:textAlignment="center"
+
+
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
 

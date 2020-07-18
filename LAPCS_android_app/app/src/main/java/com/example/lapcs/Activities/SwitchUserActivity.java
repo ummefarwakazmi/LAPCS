@@ -29,7 +29,7 @@ public class SwitchUserActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorIndigo));
         }
 
         setContentView(R.layout.activity_switch_user);

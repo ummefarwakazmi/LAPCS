@@ -47,10 +47,10 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="45dp"
-                        android:fontFamily="monospace"
+                        android:fontFamily="@font/calibri_regular"
                         android:text="@string/switch_user_str"
                         android:textColor="@color/colorBlack"
-                        android:textSize="30sp"
+                        android:textSize="35sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -60,12 +60,12 @@
                         android:layout_below="@id/appLogoText"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="40dp"
-                        android:fontFamily="monospace"
+                        android:fontFamily="@font/calibri_regular"
                         android:text="Assign this device to"
                         android:textAlignment="center"
                         android:textColor="@color/colorBlack"
                         android:textSize="20sp"
-                        android:textStyle="bold" />
+                         />
 
                     <Button
                         android:id="@+id/Login"

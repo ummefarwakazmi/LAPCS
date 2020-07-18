@@ -9,6 +9,7 @@
     <color name="colorPrimaryDark">#1CAFC1</color>
     <color name="colorPrimaryDark2">#0a5b85</color>
     <color name="colorAccent">#FB812C</color>
+    <color name="colorIndigoPressed">#D830ED</color>
     <color name="colorYKISN">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
     <color name="colorIndigo">#9C27B0</color>
@@ -17,6 +18,9 @@
     <color name="colorGrayLight">#24888888</color>
     <color name="colorIndigo2">#AA00D7</color>
     <color name="colorWhiteShade">#F5F7FA</color>
+    <color name="indigologo">#7400b3</color>
+    <color name="cream">#fffeea</color>
+
 
 
 </resources>

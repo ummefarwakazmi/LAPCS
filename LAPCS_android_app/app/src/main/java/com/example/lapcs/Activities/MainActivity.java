@@ -18,6 +18,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.telephony.TelephonyManager;
+import android.view.Window;
 
 import com.example.lapcs.R;
 import com.example.lapcs.Receivers.ControllerDeviceAdmin;
@@ -44,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorIndigo));
+        }
         setContentView(R.layout.activity_main);
 
 

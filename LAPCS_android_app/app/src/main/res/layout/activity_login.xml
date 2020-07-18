@@ -49,33 +49,19 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="45dp"
-                        android:layout_marginBottom="30dp"
                         android:layout_toEndOf="@+id/img_app"
-                        android:fontFamily="monospace"
+                        android:fontFamily="@font/calibri_regular"
                         android:text="@string/login_screen_str"
                         android:textColor="@color/colorBlack"
-                        android:textSize="30sp"
+                        android:textSize="35sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/tv_login_parent_account"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/tv_login"
-                        android:layout_centerHorizontal="true"
-                        android:fontFamily="monospace"
-                        android:lineSpacingExtra="7dp"
-                        android:text="@string/login_parent_account_str"
-                        android:textAlignment="center"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="15dp" />
 
                     <LinearLayout
                         android:id="@+id/linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_login_parent_account"
+                        android:layout_below="@+id/tv_login"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="20dp"
@@ -101,7 +87,7 @@
                                 android:inputType="textEmailAddress"
                                 android:paddingLeft="10dp"
                                 android:textColor="@color/colorBlack"
-                                android:textColorHint="@color/colorBlack" />
+                                android:textColorHint="@color/colorGray" />
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
@@ -123,7 +109,7 @@
                                 android:inputType="textPassword"
                                 android:paddingLeft="10dp"
                                 android:textColor="@color/colorBlack"
-                                android:textColorHint="@color/colorBlack" />
+                                android:textColorHint="@color/colorGray" />
                         </androidx.cardview.widget.CardView>
 
                         <TextView
@@ -132,7 +118,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
                             android:layout_marginTop="5dp"
-                            android:fontFamily="monospace"
+                            android:fontFamily="@font/calibri_regular"
                             android:lineSpacingExtra="7dp"
                             android:text="@string/forgot_password_str"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"

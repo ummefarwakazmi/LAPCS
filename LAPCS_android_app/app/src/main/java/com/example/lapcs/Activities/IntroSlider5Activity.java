@@ -3,9 +3,11 @@ package com.example.lapcs.Activities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 
 import com.example.lapcs.R;
@@ -20,6 +22,10 @@ public class IntroSlider5Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorIndigo));
+        }
         setContentView(R.layout.activity_intro_slider5);
 
         m_BtnNext = (Button) findViewById(R.id.BtnNext);

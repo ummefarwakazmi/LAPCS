@@ -3,10 +3,12 @@ package com.example.lapcs.Activities;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -26,7 +28,12 @@ public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.PreferencesTheme);
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorIndigo));
+        }
         setContentView(R.layout.settings_activity);
 
         getSupportFragmentManager()
@@ -59,7 +66,7 @@ public class SettingsActivity extends AppCompatActivity {
             button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    Toast.makeText(getActivity(),"Update Password Clicked",Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getActivity(),"Update Password Clicked",Toast.LENGTH_SHORT).show();
                     showUpdatePasswordDialog();
                     return true;
                 }
@@ -71,7 +78,7 @@ public class SettingsActivity extends AppCompatActivity {
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
             View view =  super.onCreateView(inflater, container, savedInstanceState);
-            int colorPrimaryDark = ContextCompat.getColor(getContext(), R.color.colorGray);
+            int colorPrimaryDark = ContextCompat.getColor(getContext(), R.color.colorWhiteShade);
             view.setBackgroundColor(colorPrimaryDark);
 
             return view;

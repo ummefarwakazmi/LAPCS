@@ -29,6 +29,10 @@
     <uses-permission android:name="android.permission.WRITE_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_MMS" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:name=".InitApp.App"
@@ -45,10 +49,25 @@
         tools:ignore="HardcodedDebugMode"
         tools:replace="android:allowBackup">
 
-        <!-- Service that delivers messages from the phone "quick response" -->
+        <receiver
+            android:name=".Receivers.BootStartReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+                <action android:name="android.intent.action.REBOOT" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".services.getAppUsageStatsIntentService"
+            android:exported="false"></service> <!-- Service that delivers messages from the phone "quick response" -->
         <!-- BroadcastReceiver that listens for incoming MMS messages -->
-
         <activity android:name=".Activities.SaveEmergencyNumberActivity" />
 
         <service

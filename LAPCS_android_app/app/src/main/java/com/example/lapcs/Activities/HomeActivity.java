@@ -13,11 +13,13 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -49,6 +51,12 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorIndigo));
+        }
+
         setContentView(R.layout.activity_home);
 
         //initializing firebase authentication object
@@ -68,22 +76,22 @@ public class HomeActivity extends AppCompatActivity {
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                Toast.makeText(HomeActivity.this,"onAuthStateChanged Called",Toast.LENGTH_LONG).show();
+                //Toast.makeText(HomeActivity.this,"onAuthStateChanged Called",Toast.LENGTH_SHORT).show();
             }
         };
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "You will Receive Push Notification Shortly!", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                PushNotificationHelper.SendPushNotification(HomeActivity.this, App.DeviceToken,Server_API_key,ContentType,"Test Notification!","LAPCS Alert!");
-            }
-        });
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "You will Receive Push Notification Shortly!", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//                PushNotificationHelper.SendPushNotification(HomeActivity.this, App.DeviceToken,Server_API_key,ContentType,"Test Notification!","LAPCS Alert!");
+//            }
+//        });
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -116,7 +124,7 @@ public class HomeActivity extends AppCompatActivity {
             }
             catch (Exception ex)
             {
-                Toast.makeText(HomeActivity.this,"Exception Occurred"+ex.getMessage().toString(),Toast.LENGTH_LONG).show();
+                //Toast.makeText(HomeActivity.this,"Exception Occurred"+ex.getMessage().toString(),Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -142,16 +150,16 @@ public class HomeActivity extends AppCompatActivity {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.action_settings:
-                Toast.makeText(HomeActivity.this, "Settings Option Clicked!", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(HomeActivity.this, "Settings Option Clicked!", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(HomeActivity.this, SettingsActivity.class);
                 startActivity(i);
                 return true;
-            case R.id.action_rate:
-                Toast.makeText(HomeActivity.this, "Rate Us Option Clicked!", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.action_about:
-                Toast.makeText(HomeActivity.this, "About Us Option Clicked!", Toast.LENGTH_SHORT).show();
-                return true;
+//            case R.id.action_rate:
+//                Toast.makeText(HomeActivity.this, "Rate Us Option Clicked!", Toast.LENGTH_SHORT).show();
+//                return true;
+//            case R.id.action_about:
+//                Toast.makeText(HomeActivity.this, "About Us Option Clicked!", Toast.LENGTH_SHORT).show();
+//                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -53,7 +53,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/f_img"
                         android:layout_centerHorizontal="true"
-                        android:fontFamily="monospace"
+                        android:fontFamily="@font/calibri_regular"
                         android:gravity="center_horizontal"
                         android:text="@string/slide_1_desc"
                         android:textSize="40px"

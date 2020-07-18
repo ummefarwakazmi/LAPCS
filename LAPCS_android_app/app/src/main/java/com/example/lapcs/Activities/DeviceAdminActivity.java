@@ -24,7 +24,7 @@ public class DeviceAdminActivity extends Activity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorIndigo));
         }
         setContentView(R.layout.activity_device_admin);
         devicePolicyManager=(DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
@@ -50,7 +50,7 @@ public class DeviceAdminActivity extends Activity implements View.OnClickListene
             finish();
         }
         else
-            Toast.makeText(getApplicationContext(),"LAPCS will not work properly until you grant this permission",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"LAPCS will not work properly until you grant this permission",Toast.LENGTH_SHORT).show();
     }
 
     @Override

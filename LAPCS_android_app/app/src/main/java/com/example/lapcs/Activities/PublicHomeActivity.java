@@ -76,7 +76,7 @@ public class PublicHomeActivity extends AppCompatActivity {
 
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorIndigo));
         }
         setContentView(R.layout.activity_public_home);
 
@@ -172,7 +172,7 @@ public class PublicHomeActivity extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(this, "GPS Tracking Service Already Running", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "GPS Tracking Service Already Running", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -181,7 +181,7 @@ public class PublicHomeActivity extends AppCompatActivity {
     {
         String Imei = sharedPreferences.getString("Imei", "");
 
-        Toast.makeText(PublicHomeActivity.this,"Saving Child MetaData . . .!", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(PublicHomeActivity.this,"Saving Child MetaData . . .!", Toast.LENGTH_SHORT).show();
         FirebaseInstanceId.getInstance().getInstanceId()
                 .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
                     @Override
@@ -193,7 +193,7 @@ public class PublicHomeActivity extends AppCompatActivity {
                                 String NewDeviceToken= task.getResult().getToken();
 
                                 Log.d(AppConsts.TAG, "onComplete: Token: " + NewDeviceToken);
-                                Toast.makeText(PublicHomeActivity.this,"Token Generated: " + NewDeviceToken, Toast.LENGTH_LONG).show();
+                                //Toast.makeText(PublicHomeActivity.this,"Token Generated: " + NewDeviceToken, Toast.LENGTH_SHORT).show();
 
                                 try
                                 {
@@ -215,7 +215,7 @@ public class PublicHomeActivity extends AppCompatActivity {
 
                                             if (dataSnapshot.getValue() != null &&  !("".equals(dataSnapshot.getValue().toString())) && !(TextUtils.isEmpty(dataSnapshot.getValue().toString())))
                                             {
-                                                Toast.makeText(PublicHomeActivity.this, "Child Metadata Already Saved", Toast.LENGTH_LONG).show();
+                                                //Toast.makeText(PublicHomeActivity.this, "Child Metadata Already Saved", Toast.LENGTH_SHORT).show();
                                                 Log.d(TAG,this.getClass().getName()+": "+"Child Metadata Already Saved");
                                                 Log.d(TAG, this.getClass().getName()+"Child Metadata Already Saved: Token Value: "+  dataSnapshot.getValue().toString());
 
@@ -239,7 +239,7 @@ public class PublicHomeActivity extends AppCompatActivity {
 
                                                 App.DeviceToken = NewDeviceToken;
                                                 Log.d(AppConsts.TAG, this.getClass().getName()+": "+"onComplete: Token: " + App.DeviceToken);
-                                                Toast.makeText(PublicHomeActivity.this,"Child Token Generated: " + App.DeviceToken,Toast.LENGTH_LONG).show();
+                                                //Toast.makeText(PublicHomeActivity.this,"Child Token Generated: " + App.DeviceToken,Toast.LENGTH_SHORT).show();
 
                                                 editor.putString("DeviceToken", App.DeviceToken);
                                                 editor.commit();
@@ -247,10 +247,10 @@ public class PublicHomeActivity extends AppCompatActivity {
 
 
                                                 //displaying a success toast
-                                                Toast.makeText(PublicHomeActivity.this, "Child MetaData Saved Successfully!", Toast.LENGTH_LONG).show();
+                                                //Toast.makeText(PublicHomeActivity.this, "Child MetaData Saved Successfully!", Toast.LENGTH_SHORT).show();
 
                                                 // Sending Notification to Child Device
-                                                PushNotificationHelper.SendPushNotification(PublicHomeActivity.this,App.DeviceToken,Server_API_key,ContentType,"Child MetaData Saved Successfully!","LAPCS Alert!");
+                                                //PushNotificationHelper.SendPushNotification(PublicHomeActivity.this,App.DeviceToken,Server_API_key,ContentType,"Child MetaData Saved Successfully!","LAPCS Alert!");
                                                 //Getting Parent Device Token
 
                                                 parentDeviceTokenID = sharedPreferences.getString("ParentDeviceToken", "");
@@ -258,11 +258,11 @@ public class PublicHomeActivity extends AppCompatActivity {
                                                 if(!parentDeviceTokenID.equals(""))
                                                 {
                                                     // Sending Notification to Parent Device
-                                                    PushNotificationHelper.SendPushNotification(PublicHomeActivity.this,parentDeviceTokenID,Server_API_key,ContentType,"Child MetaData Saved Successfully!","LAPCS Alert!");
+                                                    //PushNotificationHelper.SendPushNotification(PublicHomeActivity.this,parentDeviceTokenID,Server_API_key,ContentType,"Child MetaData Saved Successfully!","LAPCS Alert!");
                                                 }
                                                 else
                                                 {
-                                                    Toast.makeText(PublicHomeActivity.this, "Parent Metadata not Saved. Notification To Parent Sending Failed! ", Toast.LENGTH_LONG).show();
+                                                    //Toast.makeText(PublicHomeActivity.this, "Parent Metadata not Saved. Notification To Parent Sending Failed! ", Toast.LENGTH_SHORT).show();
                                                 }
                                             }
 
@@ -271,22 +271,22 @@ public class PublicHomeActivity extends AppCompatActivity {
                                         @Override
                                         public void onCancelled(@NonNull DatabaseError databaseError) {
                                             System.out.println("The read failed: " + databaseError.getMessage());
-                                            Toast.makeText(PublicHomeActivity.this, "The read failed: " + databaseError.getMessage(), Toast.LENGTH_LONG).show();
+                                            Toast.makeText(PublicHomeActivity.this, "The read failed: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
                                             Log.d(TAG,this.getClass().getName()+": "+"The read failed: " + databaseError.getMessage());
                                         }
                                     });
 
                                 } catch (Exception e) {
                                     e.printStackTrace();
-                                    Toast.makeText(PublicHomeActivity.this,"Child Metadata Exception: "+e.getMessage(), Toast.LENGTH_LONG).show();
+                                    //Toast.makeText(PublicHomeActivity.this,"Child Metadata Exception: "+e.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
 
                             } catch (Exception e) {
                                 e.printStackTrace();
-                                Toast.makeText(PublicHomeActivity.this,"Token generation Exception", Toast.LENGTH_LONG).show();
+                                //Toast.makeText(PublicHomeActivity.this,"Token generation Exception", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(PublicHomeActivity.this,"Token generation failed", Toast.LENGTH_LONG).show();
+                            //Toast.makeText(PublicHomeActivity.this,"Token generation failed", Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -307,12 +307,12 @@ public class PublicHomeActivity extends AppCompatActivity {
             {
                 startService(new Intent(this, LockScreenSOS_Service.class));
                 Log.d(AppConsts.TAG,"PublicHomeActivity:    LockScreenSOS_Service is Started !");
-                Toast.makeText(getApplicationContext(),"LockScreenSOS_Service Started",Toast.LENGTH_SHORT);
+                //Toast.makeText(getApplicationContext(),"LockScreenSOS_Service Started",Toast.LENGTH_SHORT);
             }
             else
             {
                 Log.d(AppConsts.TAG,"PublicHomeActivity:    LockScreenSOS_Service is Already Running !");
-                Toast.makeText(getApplicationContext(),"LockScreenSOS_Service is Already Running !",Toast.LENGTH_SHORT);
+                //Toast.makeText(getApplicationContext(),"LockScreenSOS_Service is Already Running !",Toast.LENGTH_SHORT);
             }
 
         }
@@ -336,12 +336,12 @@ public class PublicHomeActivity extends AppCompatActivity {
             {
                 startService(new Intent(this, SendMessageFromLockScreenService.class));
                 Log.d(AppConsts.TAG,"PublicHomeActivity:    SendMessageFromLockScreenService is Started !");
-                Toast.makeText(getApplicationContext(),"SendMessageFromLockScreenService Started",Toast.LENGTH_SHORT);
+                //Toast.makeText(getApplicationContext(),"SendMessageFromLockScreenService Started",Toast.LENGTH_SHORT);
             }
             else
             {
                 Log.d(AppConsts.TAG,"PublicHomeActivity:    SendMessageFromLockScreenService is Already Running !");
-                Toast.makeText(getApplicationContext(),"SendMessageFromLockScreenService is Already Running !",Toast.LENGTH_SHORT);
+                //Toast.makeText(getApplicationContext(),"SendMessageFromLockScreenService is Already Running !",Toast.LENGTH_SHORT);
             }
 
         }

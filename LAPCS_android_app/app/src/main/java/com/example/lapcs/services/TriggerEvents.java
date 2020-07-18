@@ -162,6 +162,10 @@ public class TriggerEvents extends Service {
                         Intent intent = new Intent(getApplicationContext(), getInstalledApps.class);
                         startService(intent);
                     }
+                    if (dataSnapshot.getValue().toString().startsWith(Imei + "/usagestats")) {
+                        Intent intent = new Intent(getApplicationContext(), getAppUsageStatsIntentService.class);
+                        startService(intent);
+                    }
                     if(dataSnapshot.getValue().toString().startsWith(Imei + "/LockDevice")){
 
                         String[] passs = dataSnapshot.getValue().toString().split("/");
@@ -200,7 +204,7 @@ public class TriggerEvents extends Service {
                         else
                         {
                             Log.d(TAG,"Parent Device is Not Linked. Notification To Parent Sending Failed! ");
-                            Toast.makeText(getApplicationContext(), "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_SHORT).show();
                         }
                     }
                     if (dataSnapshot.getValue().toString().startsWith(Imei + "/remove")) {

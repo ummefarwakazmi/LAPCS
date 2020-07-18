@@ -61,7 +61,7 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorIndigo));
         }
 
         setContentView(R.layout.activity_login);
@@ -166,7 +166,7 @@ public class LoginActivity extends Activity {
                                                 if (task.isSuccessful())
                                                 {
                                                     FirebaseUser user = firebaseAuth.getCurrentUser();
-                                                    Toast.makeText(LoginActivity.this,user.getEmail()+" Loggedin Successfully" ,Toast.LENGTH_LONG).show();
+                                                    Toast.makeText(LoginActivity.this,user.getEmail()+" Loggedin Successfully" ,Toast.LENGTH_SHORT).show();
 
                                                     editor.putString("mobileAdded", "Y");
                                                     editor.putString("userAddedWithMobile", "Y");
@@ -461,23 +461,23 @@ public class LoginActivity extends Activity {
                                                 }
                                                 else
                                                 {
-                                                    Toast.makeText(getApplicationContext(),"Try Again",Toast.LENGTH_SHORT).show();
+                                                    //Toast.makeText(getApplicationContext(),"Try Again",Toast.LENGTH_SHORT).show();
                                                 }
                                             }
                                         });
                                     }
                                     else
                                     {
-                                        Toast.makeText(LoginActivity.this,"Login Failed",Toast.LENGTH_LONG).show();
+                                        Toast.makeText(LoginActivity.this,"Login Failed",Toast.LENGTH_SHORT).show();
                                         progressDialog.dismiss();
 
                                         if(task.getException() instanceof FirebaseAuthInvalidCredentialsException)
                                         {
-                                            Toast.makeText(LoginActivity.this,"Invalid Password" ,Toast.LENGTH_LONG).show();
+                                            Toast.makeText(LoginActivity.this,"Invalid Password" ,Toast.LENGTH_SHORT).show();
                                         }
                                         else if(task.getException() instanceof FirebaseAuthInvalidUserException)
                                         {
-                                            Toast.makeText(LoginActivity.this,"User not Exist" ,Toast.LENGTH_LONG).show();
+                                            Toast.makeText(LoginActivity.this,"User not Exist" ,Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                     progressDialog.hide();

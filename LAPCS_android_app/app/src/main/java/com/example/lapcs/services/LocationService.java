@@ -148,7 +148,7 @@ public class LocationService extends Service {
                                         Log.d(TAG, "Proximity Alert Message sent to parent");
                                     } else {
                                         Log.d(TAG, "Parent Device is Not Linked. Notification To Parent Sending Failed! ");
-                                        Toast.makeText(getApplicationContext(), "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_LONG).show();
+                                        //Toast.makeText(getApplicationContext(), "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_SHORT).show();
                                     }
 
                                 }
@@ -165,7 +165,7 @@ public class LocationService extends Service {
                                         Log.d(TAG, "Proximity Alert Message sent to parent");
                                     } else {
                                         Log.d(TAG, "Parent Device is Not Linked. Notification To Parent Sending Failed! ");
-                                        Toast.makeText(getApplicationContext(), "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_LONG).show();
+                                        //Toast.makeText(getApplicationContext(), "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_SHORT).show();
                                     }
                                 }
 
@@ -258,7 +258,7 @@ public class LocationService extends Service {
                                         Log.d(TAG, "Proximity Alert Message sent to parent");
                                     } else {
                                         Log.d(TAG, "Parent Device is Not Linked. Notification To Parent Sending Failed! ");
-                                        Toast.makeText(getApplicationContext(), "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_LONG).show();
+                                        //Toast.makeText(getApplicationContext(), "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_SHORT).show();
                                     }
                                 }
 
@@ -274,7 +274,7 @@ public class LocationService extends Service {
                                         Log.d(TAG, "Proximity Alert Message sent to parent");
                                     } else {
                                         Log.d(TAG, "Parent Device is Not Linked. Notification To Parent Sending Failed! ");
-                                        Toast.makeText(getApplicationContext(), "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_LONG).show();
+                                        //Toast.makeText(getApplicationContext(), "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_SHORT).show();
                                     }
                                 }
 

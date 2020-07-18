@@ -43,7 +43,7 @@ public class SignUPActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorIndigo));
         }
         setContentView(R.layout.activity_sign_up);
         userName=(EditText)findViewById(R.id.getUserName);
@@ -128,7 +128,7 @@ public class SignUPActivity extends Activity {
                         public void onFailure(@NonNull Exception e) {
                             if(e instanceof FirebaseAuthUserCollisionException)
                             {
-                                Toast.makeText(SignUPActivity.this,"User Already Exists" ,Toast.LENGTH_LONG).show();
+                                Toast.makeText(SignUPActivity.this,"User Already Exists" ,Toast.LENGTH_SHORT).show();
                                 progressDialog.hide();
                             }
                         }

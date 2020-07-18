@@ -13,8 +13,7 @@
 
 <item android:state_pressed="true">
     <shape xmlns:android="http://schemas.android.com/apk/res/android">
-        <solid android:color="@color/colorAccent" />
-
+        <solid android:color="@color/colorIndigoPressed" />
         <stroke android:width="3dp" android:color="@color/colorFormBackground" />
         <padding android:left="1dp" android:top="1dp" android:right="1dp"
             android:bottom="1dp" />

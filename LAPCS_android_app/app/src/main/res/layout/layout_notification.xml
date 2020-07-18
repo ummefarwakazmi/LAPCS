@@ -59,7 +59,7 @@
             android:singleLine="true"
             android:textAlignment="center"
             android:text="LAPCS"
-            android:background="@color/colorAccent"/>
+            android:background="@color/indigologo"/>
 
         <TextView
             android:id="@+id/notification_contenttext_tv"

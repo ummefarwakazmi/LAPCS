@@ -17,6 +17,12 @@ if ( !isset($_SESSION["userEmail"]))
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Parent Dashboard</title>
+        <style>
+            .breadcrumb {
+                margin-top: 25px !important;
+            }
+         </style>
+
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
@@ -26,7 +32,7 @@ if ( !isset($_SESSION["userEmail"]))
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" > <img src="logo.jpg" alt="lapcs logo" class="align-self-start rounded-circle" style="width:40px;">
+            <a class="navbar-brand" > <img src="logo.jpeg" alt="lapcs logo" class="align-self-start rounded-circle" style="width:40px;">
             </a> 
             <a class="navbar-brand" href="index.php">LAPCS</a>
             
@@ -76,6 +82,9 @@ if ( !isset($_SESSION["userEmail"]))
                                 <a class="nav-link" href="SocialApp.php"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                                 Social Apps</a>
+                            <a class="nav-link" href="SocialAppUsageStats.php"
+                            ><div class="sb-nav-link-icon"><i class="fas fa-clock"></i></div>
+                                Social Apps Usage</a>
                                 <a class="nav-link" href="Photo.php"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-camera"></i></div>
                                 Photos</a>
@@ -99,9 +108,9 @@ if ( !isset($_SESSION["userEmail"]))
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Location Aware Parenting Control System</h1>
+
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Monitor Your Child 24/7</li>
+                            <li class="breadcrumb-item active">Location Aware Parenting Control System</li>
                         </ol>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">

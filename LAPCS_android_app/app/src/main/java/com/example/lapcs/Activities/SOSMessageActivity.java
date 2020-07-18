@@ -5,11 +5,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -53,6 +55,10 @@ public class SOSMessageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorIndigo));
+        }
         setContentView(R.layout.activity_sosmessage);
 
         if (!SmsHelper.hasReadSmsPermission(SOSMessageActivity.this)) {
@@ -73,7 +79,7 @@ public class SOSMessageActivity extends AppCompatActivity {
         BtnSendPanicAlert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(SOSMessageActivity.this,"Send Panic Alert Button Pressed", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(SOSMessageActivity.this,"Send Panic Alert Button Pressed", Toast.LENGTH_SHORT).show();
 
 
                 parentDeviceTokenID = sharedPreferences.getString("ParentDeviceToken", "");
@@ -84,7 +90,7 @@ public class SOSMessageActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(SOSMessageActivity.this, "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_LONG).show();
+                   // Toast.makeText(SOSMessageActivity.this, "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_SHORT).show();
                 }
 
             }

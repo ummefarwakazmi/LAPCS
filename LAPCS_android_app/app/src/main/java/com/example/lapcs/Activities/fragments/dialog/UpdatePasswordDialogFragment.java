@@ -120,7 +120,7 @@ public class UpdatePasswordDialogFragment extends DialogFragment {
         }
         else
         {
-            Toast.makeText(getActivity(),"User not LoggedIn" ,Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(),"User not LoggedIn" ,Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -147,7 +147,7 @@ public class UpdatePasswordDialogFragment extends DialogFragment {
 
                         if(task.isSuccessful())
                         {
-                            Toast.makeText(getActivity(),"Authentication Succeeded" ,Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(),"Authentication Succeeded" ,Toast.LENGTH_SHORT).show();
 
                             LinearLayoutAuthenticatePassword.setVisibility(View.GONE);
                             LinearLayoutUpdatePassword.setVisibility(View.VISIBLE);
@@ -157,11 +157,11 @@ public class UpdatePasswordDialogFragment extends DialogFragment {
 
                             if(task.getException() instanceof FirebaseAuthInvalidCredentialsException)
                             {
-                                Toast.makeText(getActivity(),"Invalid Password" ,Toast.LENGTH_LONG).show();
+                                Toast.makeText(getActivity(),"Invalid Password" ,Toast.LENGTH_SHORT).show();
                             }
                             else
                             {
-                                Toast.makeText(getActivity(),"Password Authentication Failed" ,Toast.LENGTH_LONG).show();
+                                Toast.makeText(getActivity(),"Password Authentication Failed" ,Toast.LENGTH_SHORT).show();
                             }
                         }
                         progressDialog.dismiss();
@@ -211,13 +211,13 @@ public class UpdatePasswordDialogFragment extends DialogFragment {
 
                         if(task.isSuccessful())
                         {
-                            Toast.makeText(getActivity(),"Password Updated" ,Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(),"Password Updated" ,Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
                             logout();
                         }
                         else
                         {
-                            Toast.makeText(getActivity(),"Password Authentication Failed" ,Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(),"Password Authentication Failed" ,Toast.LENGTH_SHORT).show();
                         }
                         progressDialog.dismiss();
                     }

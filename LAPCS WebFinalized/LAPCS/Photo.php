@@ -69,6 +69,11 @@ else{
             background-color: #007bff;
             color: white;
         }
+
+         .breadcrumb {
+             margin-top: 25px !important;
+         }
+
     </style>
     <title>Parent Dashboard</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
@@ -82,7 +87,7 @@ else{
 </head>
 <body class="sb-nav-fixed">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand" > <img src="logo.jpg" alt="lapcs logo" class="align-self-start rounded-circle" style="width:40px;">
+    <a class="navbar-brand" > <img src="logo.jpeg" alt="lapcs logo" class="align-self-start rounded-circle" style="width:40px;">
     </a>
     <a class="navbar-brand" href="index.php">LAPCS</a>
 
@@ -130,6 +135,9 @@ else{
                                 <a class="nav-link" href="SocialApp.php"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                                 Social Apps</a>
+                    <a class="nav-link" href="SocialAppUsageStats.php"
+                    ><div class="sb-nav-link-icon"><i class="fas fa-clock"></i></div>
+                        Social Apps Usage</a>
                                 <a class="nav-link" href="Photo.php"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-camera"></i></div>
                                 Photos</a>
@@ -154,7 +162,7 @@ else{
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
-                <h1 class="mt-4">Photos</h1>
+
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
                     <li class="breadcrumb-item active">Photos</li>

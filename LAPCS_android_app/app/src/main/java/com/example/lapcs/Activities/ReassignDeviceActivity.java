@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -53,6 +55,10 @@ public class ReassignDeviceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorIndigo));
+        }
         setContentView(R.layout.activity_reassign_device);
 
         mAuth = FirebaseAuth.getInstance();
@@ -60,7 +66,7 @@ public class ReassignDeviceActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
 
         mDeviceName = (TextView) findViewById(R.id.tv_device_name);
-        mDeviceName.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+        mDeviceName.setGravity(Gravity.LEFT );
         PhoneIMEI = sharedPreferences.getString("Imei", "");
 
         //editTextReassign
@@ -107,12 +113,12 @@ public class ReassignDeviceActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        Toast.makeText(ReassignDeviceActivity.this, "Device Name not Changed! ", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(ReassignDeviceActivity.this, "Device Name not Changed! ", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else
                 {
-                    Toast.makeText(ReassignDeviceActivity.this, "Device Name or Device IMEI is Empty! ", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(ReassignDeviceActivity.this, "Device Name or Device IMEI is Empty! ", Toast.LENGTH_SHORT).show();
                 }
             }
         });

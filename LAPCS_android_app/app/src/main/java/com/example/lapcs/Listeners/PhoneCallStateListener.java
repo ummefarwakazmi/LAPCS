@@ -69,7 +69,7 @@ public class PhoneCallStateListener extends PhoneStateListener {
     @Override
     public void onCallStateChanged(int state, String incomingNumber) {
 
-        Toast.makeText(context, "Phone Call State Listener is Active", Toast.LENGTH_LONG).show();
+        Toast.makeText(context, "Phone Call State Listener is Active", Toast.LENGTH_SHORT).show();
 
         Log.d(TAG, "WatchListContactsMap after Reading in onCallStateChanged"+new Gson().toJson(WatchListContactsMap));
 
@@ -110,7 +110,7 @@ public class PhoneCallStateListener extends PhoneStateListener {
                 Log.d(TAG, "OFFHOOK");
                 eventStartTime = SMSInfo.GetCurrentTime();
 
-                Toast.makeText(context, "Outgoing call to: " + incomingNumber +" at "+eventStartTime, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Outgoing call to: " + incomingNumber +" at "+eventStartTime, Toast.LENGTH_SHORT).show();
                 Log.d(TAG, "Outgoing call to: " + incomingNumber +" at "+eventStartTime);
 
                 ///////////////////////////////////////////////
@@ -277,7 +277,7 @@ public class PhoneCallStateListener extends PhoneStateListener {
 
                         if(BlockListContactsMap.containsKey(contactName.trim()))
                         {
-                            ServiceUtils.BlockIncomingOrOutgoingCalls(context);
+                            //ServiceUtils.BlockIncomingOrOutgoingCalls(context);
 
                             String blockCallMsg="";
 
@@ -365,7 +365,7 @@ public class PhoneCallStateListener extends PhoneStateListener {
 
                         if(BlockListContactsMap.containsKey(phoneToCompare.trim()))
                         {
-                            ServiceUtils.BlockIncomingOrOutgoingCalls(context);
+                           // ServiceUtils.BlockIncomingOrOutgoingCalls(context);
 
                             String blockCallMsg="";
 

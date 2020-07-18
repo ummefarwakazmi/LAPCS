@@ -73,10 +73,12 @@ else{
             font-family: Roboto;
             font-size: 15px;
             font-weight: 300;
-            margin-left: 12px;
+            margin-left: 500px;
             padding: 0 11px 0 13px;
             text-overflow: ellipsis;
             width: 400px;
+            height: 30px;
+            border-radius: 5px;
         }
 
         #pac-input:focus {
@@ -94,12 +96,16 @@ else{
             width: 345px;
         }
 
+         .breadcrumb {
+             margin-top: 25px !important;
+         }
+
     </style>
 
 </head>
 <body class="sb-nav-fixed">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand" > <img src="logo.jpg" alt="lapcs logo" class="align-self-start rounded-circle" style="width:40px;">
+    <a class="navbar-brand" > <img src="logo.jpeg" alt="lapcs logo" class="align-self-start rounded-circle" style="width:40px;">
     </a>
     <a class="navbar-brand" href="index.php">LAPCS</a>
 
@@ -147,6 +153,9 @@ else{
                     <a class="nav-link" href="SocialApp.php"
                     ><div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                         Social Apps</a>
+                    <a class="nav-link" href="SocialAppUsageStats.php"
+                    ><div class="sb-nav-link-icon"><i class="fas fa-clock"></i></div>
+                        Social Apps Usage</a>
                     <a class="nav-link" href="Photo.php"
                     ><div class="sb-nav-link-icon"><i class="fas fa-camera"></i></div>
                         Photos</a>
@@ -171,7 +180,7 @@ else{
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
-                <h1 class="mt-4">Location</h1>
+
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
                     <li class="breadcrumb-item active">Location</li>
@@ -181,12 +190,14 @@ else{
                         <div class="form-check form-check-inline">
                             <label for="trackingToggle" class="form-check-label"> <h3 >Tracking</h3></label>&nbsp;&nbsp;&nbsp;
                             <input id="trackingToggle" class="form-check-label" type="checkbox" data-toggle="toggle" data-style="mr-1" data-onstyle="success" data-offstyle="danger" checked>
+
+
+                        <input id="pac-input" class="controls" type="text" placeholder="Search Box" >
                         </div>
                         <br>
-                        <input id="pac-input" class="controls" type="text" placeholder="Search Box" >
                         <br>
                         <div id="googleMap" style="width:100%;height:400px;"></div>
-
+                        <br>
                         <div class='list-group' id='LocationList'>
                             <strong class='text-center'><a class='disabled'>No Data</a></strong>
                         </div>
@@ -444,7 +455,7 @@ else{
 
         ref.on('value', function (data) {
            // alert("ref --> getLocations");
-            document.getElementById('LocationList').innerHTML = "<a>No Data</a>";
+            document.getElementById('LocationList').innerHTML = "<strong class='text-center'><a>No Data</a></strong>";
             var details = data.val();
             var valData = Object.values(details);
             if (details.startsWith("//LAPCS//requestLocation//LAPCS//")) {
@@ -494,7 +505,7 @@ else{
                         var input = document.getElementById('pac-input');
                         //input.hidden = false;
                         var searchBox = new google.maps.places.SearchBox(input);
-                        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+                        //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
                         // Bias the SearchBox results towards current map's viewport.
                         map.addListener('bounds_changed', function() {
@@ -710,7 +721,7 @@ else{
                         setProximityAlert();
                     }
 
-                    oldData = oldData + "<a class='list-group-item list-group-item-action bg-primary text-white'>" + filesFetched[i] + "</a>"
+                    oldData = oldData + "<a class='list-group-item list-group-item-action bg-primary text-white text-center'>" + filesFetched[i] + "</a>"
                     document.getElementById('LocationList').innerHTML = oldData;
                 }
             }
@@ -920,6 +931,7 @@ else{
         }
 
     }
+
 
 </script>
 </body>

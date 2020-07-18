@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Window;
 import android.widget.ProgressBar;
 
 import com.example.lapcs.R;
@@ -29,6 +30,10 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorIndigo));
+        }
         setContentView(R.layout.activity_splash);
 
         sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
@@ -40,7 +45,7 @@ public class SplashActivity extends AppCompatActivity {
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         mProgressBar.setScaleY(3f);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            mProgressBar.setProgressTintList(ColorStateList.valueOf(Color.rgb(216, 48, 237)));
+            mProgressBar.setProgressTintList(ColorStateList.valueOf(Color.rgb(116, 0, 179)));
         }
 
         i = mProgressBar.getProgress();

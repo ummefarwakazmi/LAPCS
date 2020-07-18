@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">LAPCS</string>
-    <string name="grantPermission">Grant all requested permissions to LAPCS. This is the most important step. Grant all permissions requested, otherwise you will not be able to perform all actions and application will not work properly. </string>
+    <string name="grantPermission">Grant all requested permissions to LAPCS, otherwise you will not be able to perform all actions and application will not work properly. </string>
     <string name="grantPermissionAdmin">Allow LAPCS to run as administrator. This is very important otherwise application will not be able to perform certain actions and may crash or act abnormally. </string>
 
 
 
-    <string name="app_perm_str">App Permissions</string>
-    <string name="app_slogan">Track Your Kid Now!</string>
+    <string name="app_perm_str">Grant Permissions</string>
+    <string name="app_slogan">Secure Your Kid Now!</string>
     <string name="lapcs_short_str">LOCI MOBI MINI</string>
     <string name="lapcs_full_str">Location Aware Parenting Control System</string>
     <string name="company_name">FARWA AND FATIMA STUDIO</string>
@@ -94,7 +94,7 @@
     <string name="action_about">About Us</string>
     <string name="action_rate">Rate Us</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home">LAPCS</string>
     <string name="menu_children">Children</string>
     <string name="menu_faq">FAQ</string>
     <string name="menu_logout">Logout</string>
@@ -114,14 +114,14 @@
     <string name="question_no_1_str">1. How to install the LAPCS App in Child Mode?</string>
     <string name="question_no_2_str">2. What versions of Android are currently supported?</string>
     <string name="question_no_3_str">3. What features are available with LAPCS?</string>
-    <string name="question_no_4_str">4. How can I temporarily disable LAPCS in Parent Mode?</string>
+    <string name="question_no_4_str">4. How to uninstall the LAPCS in Child Mode?</string>
     <string name="question_no_5_str">5. How can I temporarily disable LAPCS in Child Mode?</string>
-    <string name="question_no_6_str">6. How to uninstall the LAPCS in Child Mode?</string>
 
 
-    <string name="answer_no_1_str">Answer: Please see instructions carefully after installation on Child Device.</string>
-    <string name="answer_no_2_str">Answer: LAPCS is compatible with KITKAT (API level 19) or higher.</string>
-    <string name="answer_no_3_str">Answer: \n
+
+    <string name="answer_no_1_str">Please see instructions carefully after installation on Child Device.</string>
+    <string name="answer_no_2_str">LAPCS is compatible with KITKAT (API level 19) or higher.</string>
+    <string name="answer_no_3_str">
                                     1. SMS Monitoring\n
                                     2. Call  Monitoring\n
                                     3. Contact  Monitoring\n
@@ -131,13 +131,13 @@
                                     7. Contact Watch List\n
     </string>
 
-    <string name="answer_no_4_str">Answer: To disable LAPCS in Parent Mode, Just Go To > Devices > Press \"Unlink My Device\" Button</string>
-    <string name="answer_no_5_str">Answer: To disable LAPCS in Child Mode, Just Go To > Parent Access > Login > Press \"Unlink Child\" Button</string>
-    <string name="answer_no_6_str">Answer: First of all disable admin mode and then uninstall it in usuall way</string>
+    <string name="answer_no_4_str">First of all disable admin mode and then uninstall it in usuall way</string>
+    <string name="answer_no_5_str">To disable LAPCS in Child Mode, Just Go To > Children Fragment > Press Three dots of Specific Child Item  > Press \"Remove Device\" Option</string>
+    <string name="answer_no_6_str">First of all disable admin mode and then uninstall it in usuall way</string>
 
     <string name="faq_str">Frequently Asked Questions</string>
 
-    <string name="home_str_1">World\'s Most Powerful Parental Control App</string>
+    <string name="home_str_1">Parental Control App</string>
     <string name="home_str_2">Reclaim your family moments by managing content and usage across all devices.</string>
     <string name="home_str_3">Monitor and Manage kid\'s Cell Phone Activities like SMS, Phone Logs, Contact List, Installed Apps, Photos, Location, Geofencing and much more!</string>
 

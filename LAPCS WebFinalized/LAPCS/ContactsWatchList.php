@@ -56,6 +56,16 @@ else{
             z-index: 10;
         }
 
+        .list-group-item
+        {
+            border-radius: 34px !important;
+        }
+
+         .breadcrumb {
+             margin-top: 25px !important;
+         }
+
+
     </style>
     <title>Parent Dashboard</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
@@ -74,7 +84,7 @@ else{
 </head>
 <body class="sb-nav-fixed">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand" > <img src="logo.jpg" alt="lapcs logo" class="align-self-start rounded-circle" style="width:40px;">
+    <a class="navbar-brand" > <img src="logo.jpeg" alt="lapcs logo" class="align-self-start rounded-circle" style="width:40px;">
     </a>
     <a class="navbar-brand" href="index.php">LAPCS</a>
 
@@ -123,6 +133,9 @@ else{
                     <a class="nav-link" href="SocialApp.php"
                     ><div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                         Social Apps</a>
+                    <a class="nav-link" href="SocialAppUsageStats.php"
+                    ><div class="sb-nav-link-icon"><i class="fas fa-clock"></i></div>
+                        Social Apps Usage</a>
                     <a class="nav-link" href="Photo.php"
                     ><div class="sb-nav-link-icon"><i class="fas fa-camera"></i></div>
                         Photos</a>
@@ -146,7 +159,7 @@ else{
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
-                <h1 class="mt-4">Contacts Watchlist</h1>
+
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
                     <li class="breadcrumb-item active">Contacts Watchlist</li>
@@ -184,7 +197,7 @@ else{
                     <div class='col-md-12'>
 
                         <br>
-                        <button class='btn btn-primary btn-block' type='button' onclick='LoadWatchedAndBlockedContacts()'>Load Watched and Blocked Contacts</button>
+                        <button class='btn btn-primary btn-block' type='button' onclick='LoadWatchedAndBlockedContacts()'>Load Watched Contacts</button>
                         <br>
                     </div>
                 </div>
@@ -273,10 +286,10 @@ else{
         var rowId = data[0];
 
         document.getElementById('watchListDetails').innerHTML = "<strong class='text-center'><a class='disabled'>Watch List Detail of Selected Contact</a></strong>"+
-            "<a class='list-group-item list-group-item-action bg-info text-white'> " +
-            "Contact ID: <font color='black'> "+data[0]+"</font>" + "<br/>"+
-            "Contact Name: <font color='black'> "+data[1]+"</font>" + "<br/>"+
-            "Contact Number: <font color='black'> "+data[2]+"</font></a>";
+            "<a class='list-group-item list-group-item-action bg-secondary text-white'> " +
+            "Contact ID: <font color='white'> "+data[0]+"</font>" + "<br/>"+
+            "Contact Name: <font color='white'> "+data[1]+"</font>" + "<br/>"+
+            "Contact Number: <font color='white'> "+data[2]+"</font></a>";
 
         // Determine whether row ID is in the list of selected row IDs
         var index = $.inArray(rowId, rows_selected);
@@ -341,13 +354,13 @@ else{
                                     }
 
                                     callsData = callsData +
-                                        "<a class='list-group-item list-group-item-action bg-primary text-white'> " +
-                                        "Number			 :	<font color='black'> "+obj[i].Number+"</font>" + "<br/>"+
-                                        "OutGoingCall    :	<font color='black'> "+obj[i].OutGoingCall+"</font>" + "<br/>"+
-                                        "DateTime        :	<font color='black'> "+obj[i].DateTime+"</font>" + "<br/>"+
-                                        "DateTimeOnly    :	<font color='black'> "+obj[i].DateTimeOnly+"</font>" + "<br/>"+
-                                        "Name            :	<font color='black'> "+obj[i].Name+"</font>" + "<br/>"+
-                                        "Type            :	<font color='black'> "+obj[i].Type+"</font></a>"+ "<br/>";
+                                        "<a class='list-group-item list-group-item-action bg-secondary text-white'> " +
+                                        "Number			 :	<font color='white'> "+obj[i].Number+"</font>" + "<br/>"+
+                                        "OutGoingCall    :	<font color='white'> "+obj[i].OutGoingCall+"</font>" + "<br/>"+
+                                        "DateTime        :	<font color='white'> "+obj[i].DateTime+"</font>" + "<br/>"+
+                                        "DateTimeOnly    :	<font color='white'> "+obj[i].DateTimeOnly+"</font>" + "<br/>"+
+                                        "Name            :	<font color='white'> "+obj[i].Name+"</font>" + "<br/>"+
+                                        "Type            :	<font color='white'> "+obj[i].Type+"</font></a>"+ "<br/>";
                                 }
                                 else
                                 {
@@ -368,11 +381,11 @@ else{
 
                                     smsData = smsData +
                                         "<a class='list-group-item list-group-item-action bg-secondary text-white'> " +
-                                        "Body: <font color='black'> "+obj[i].Body+"</font>" + "<br/>"+
-                                        "Contact Name: <font color='black'> "+obj[i].ContactName+"</font>" + "<br/>"+
-                                        "Contact Number: <font color='black'> "+obj[i].ContactNumber+"</font>" + "<br/>"+
-                                        "Time: <font color='black'> "+obj[i].Time+"</font>" + "<br/>"+
-                                        "Type: <font color='black'> "+obj[i].Type+"</font></a>"+ "<br/>";
+                                        "Body: <font color='white'> "+obj[i].Body+"</font>" + "<br/>"+
+                                        "Contact Name: <font color='white'> "+obj[i].ContactName+"</font>" + "<br/>"+
+                                        "Contact Number: <font color='white'> "+obj[i].ContactNumber+"</font>" + "<br/>"+
+                                        "Time: <font color='white'> "+obj[i].Time+"</font>" + "<br/>"+
+                                        "Type: <font color='white'> "+obj[i].Type+"</font></a>"+ "<br/>";
                                 }
                                 else
                                 {
@@ -401,8 +414,8 @@ else{
             rows_selected.splice(index, 1); //row.remove(index)
             $(this).toggleClass('datatable_selected_row_color');
             document.getElementById('watchListDetails').innerHTML = "<strong class='text-center'><a class='disabled'>Watch List Detail of Selected Contact</a></strong>"+
-                "<a class='list-group-item list-group-item-action bg-danger text-white'> " +
-                "No Row Selected</a>";
+                "<strong class='text=-center'><a class='list-group-item list-group-item-action bg-secondary text-white'> " +
+                "No Row Selected</a></Strong>";
 
             document.getElementById('watchListDetailsCalls').innerHTML = "";
             document.getElementById('watchListDetailsSMS').innerHTML = "";
@@ -722,7 +735,7 @@ else{
         ref.set(newNodeVal);
 
         //alert("inserted in blockedContacts Node in Firebase");
-        toastr.success("Block List Updated !");
+       // toastr.success("Block List Updated !");
 
     }
 
@@ -785,7 +798,7 @@ else{
         {
             if(BlockedContactsNodeValue.length==0)
             {
-                toastr.info("Block List Contact is Empty!");
+             //  toastr.info("Block List Contact is Empty!");
             }
 
             if(WatchedContactsNodeValue.length==0)
@@ -825,8 +838,7 @@ else{
                 {
                     //alert(contactFromDBToCompare+'=> Found in '+WatchedContactsNodeValue);
                     //alert(contactFromDBToCompare+'=> Found in '+BlockedContactsNodeValue);
-                    btnToInsertString = '<button type="button" class=\"btn btn-danger custom\" data-id=watch-'+contactID+' ><i class=\"fa fa-eye-slash\"></i>&nbsp;Un Watch</button>&nbsp;'+
-                        '<button type="button" class=\"btn btn-danger custom\" data-id=block-'+contactID+' ><i class=\"fa fa-check-circle\"></i>&nbsp;Un Block</button>';
+                    btnToInsertString = '<button type="button" class=\"btn btn-danger custom\" data-id=watch-'+contactID+' ><i class=\"fa fa-eye-slash\"></i>&nbsp;Un Watch</button>';
 
                 }
                 else if(    WatchedContactsNodeValue.includes(contactFromDBToCompare) == false   &&
@@ -834,8 +846,7 @@ else{
                 {
                     //alert(contactFromDBToCompare+'=> Not Found in '+WatchedContactsNodeValue);
                     //alert(contactFromDBToCompare+'=> Found in '+BlockedContactsNodeValue);
-                    btnToInsertString = '<button type="button" class=\"btn btn-info custom\" data-id=watch-'+contactID+' ><i class=\"fa fa-eye\"></i>&nbsp;Watch</button>&nbsp;'+
-                        '<button type="button" class=\"btn btn-danger custom\" data-id=block-'+contactID+' ><i class=\"fa fa-check-circle\"></i>&nbsp;Un Block</button>';
+                    btnToInsertString = '<button type="button" class=\"btn btn-info custom\" data-id=watch-'+contactID+' ><i class=\"fa fa-eye\"></i>&nbsp;Watch</button>';
 
                 }
                 else if(    WatchedContactsNodeValue.includes(contactFromDBToCompare) == true   &&
@@ -843,16 +854,15 @@ else{
                 {
                     //alert(contactFromDBToCompare+'=> Found in '+WatchedContactsNodeValue);
                     //alert(contactFromDBToCompare+'=> Not Found in '+BlockedContactsNodeValue);
-                    btnToInsertString = '<button type="button" class=\"btn btn-danger custom\" data-id=watch-'+contactID+' ><i class=\"fa fa-eye-slash\"></i>&nbsp;Un Watch</button>&nbsp;'+
-                        '<button type="button" class=\"btn btn-info custom\" data-id=block-'+contactID+' ><i class=\"fa fa-ban\"></i>&nbsp;Block</button>'
+                    btnToInsertString = '<button type="button" class=\"btn btn-danger custom\" data-id=watch-'+contactID+' ><i class=\"fa fa-eye-slash\"></i>&nbsp;Un Watch</button>';
 
                 }
                 else
                 {
                     //alert(contactFromDBToCompare+'=> Not Found in '+WatchedContactsNodeValue);
                     //alert(contactFromDBToCompare+'=> Not Found in '+BlockedContactsNodeValue);
-                    btnToInsertString = '<button type="button" class=\"btn btn-info custom\" data-id=watch-'+contactID+' ><i class=\"fa fa-eye\"></i>&nbsp;Watch</button>&nbsp;'+
-                        '<button type="button" class=\"btn btn-info custom\" data-id=block-'+contactID+' ><i class=\"fa fa-ban\"></i>&nbsp;Block</button>'
+                    btnToInsertString = '<button type="button" class=\"btn btn-info custom\" data-id=watch-'+contactID+' ><i class=\"fa fa-eye\"></i>&nbsp;Watch</button>';
+
 
                 }
 
@@ -870,8 +880,8 @@ else{
 
 
         document.getElementById('watchListDetails').innerHTML = "<strong class='text-center'><a class='disabled'>Watch List Detail of Selected Contact</a></strong>"+
-            "<a class='list-group-item list-group-item-action bg-danger text-white'> " +
-            "No Row Selected</a>";
+            "<strong class='text-center'><a class='list-group-item list-group-item-action bg-secondary text-white'> " +
+            "No Row Selected</a></strong>";
 
 
 

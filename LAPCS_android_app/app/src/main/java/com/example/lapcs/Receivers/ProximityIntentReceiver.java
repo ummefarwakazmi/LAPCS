@@ -41,7 +41,7 @@ public class ProximityIntentReceiver extends BroadcastReceiver {
                 Log.d(TAG, "Proximity Alert Message sent to parent");
             } else {
                 Log.d(TAG, "Parent Device is Not Linked. Notification To Parent Sending Failed! ");
-                Toast.makeText(context, "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_LONG).show();
+                //Toast.makeText(context, "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -58,7 +58,7 @@ public class ProximityIntentReceiver extends BroadcastReceiver {
                 Log.d(TAG, "Proximity Alert Message sent to parent");
             } else {
                 Log.d(TAG, "Parent Device is Not Linked. Notification To Parent Sending Failed! ");
-                Toast.makeText(context, "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_LONG).show();
+                //Toast.makeText(context, "Parent Device is Not Linked. Notification To Parent Sending Failed! ", Toast.LENGTH_SHORT).show();
             }
         }
 

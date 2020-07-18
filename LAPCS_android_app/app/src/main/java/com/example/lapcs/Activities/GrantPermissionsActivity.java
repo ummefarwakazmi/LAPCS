@@ -3,20 +3,26 @@ package com.example.lapcs.Activities;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AppOpsManager;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.PowerManager;
 import android.provider.Settings;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.lapcs.AppConsts;
 import com.example.lapcs.R;
 
 import androidx.core.app.ActivityCompat;
@@ -32,14 +38,17 @@ public class GrantPermissionsActivity extends Activity implements View.OnClickLi
     boolean isOptimize = true;
     boolean isDoNotDisturbOn = true;
     ArrayList<String> permissions=new ArrayList<String>();
+    Drawable btn_bg_perm_disabled_selector;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorFormBackground));
+            this.getWindow().setStatusBarColor(getResources().getColor(R.color.colorIndigo));
         }
         setContentView(R.layout.activity_grant_permissions);
+        btn_bg_perm_disabled_selector = getResources().getDrawable(R.drawable.btn_bg_perm_disabled);
+
         mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         askPermission=(Button)findViewById(R.id.PermissionButton);
         batteryPermission=(Button)findViewById(R.id.PermissionBattery);
@@ -59,6 +68,19 @@ public class GrantPermissionsActivity extends Activity implements View.OnClickLi
         permissions.add(Manifest.permission.READ_CONTACTS);
         permissions.add(Manifest.permission.SEND_SMS);
         setButtons();
+
+        try {
+            if (!isAccessGranted()) {
+                Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
+                startActivity(intent);
+            }
+        }catch (Exception ex)
+        {
+            Log.d(AppConsts.TAG,"USAGE ACCESS SETTINGS: API 21 Required");
+        }
+
+
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
             isOptimize = powerManager.isIgnoringBatteryOptimizations(getPackageName());
         if (!isOptimize) {
@@ -67,7 +89,7 @@ public class GrantPermissionsActivity extends Activity implements View.OnClickLi
         else
         {
             batteryPermission.setEnabled(false);
-            batteryPermission.setBackgroundColor(Color.GRAY);
+            batteryPermission.setBackground(btn_bg_perm_disabled_selector);
             batteryPermission.setText("PERMITTED");
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -79,7 +101,7 @@ public class GrantPermissionsActivity extends Activity implements View.OnClickLi
         else
         {
             soundPermission.setEnabled(false);
-            soundPermission.setBackgroundColor(Color.GRAY);
+            soundPermission.setBackground(btn_bg_perm_disabled_selector);
             soundPermission.setText("PERMITTED");
         }
     }
@@ -95,7 +117,7 @@ public class GrantPermissionsActivity extends Activity implements View.OnClickLi
         if(isOptimize)
         {
             batteryPermission.setEnabled(false);
-            batteryPermission.setBackgroundColor(Color.GRAY);
+            batteryPermission.setBackground(btn_bg_perm_disabled_selector);
             batteryPermission.setText("PERMITTED");
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -104,7 +126,7 @@ public class GrantPermissionsActivity extends Activity implements View.OnClickLi
         if(isDoNotDisturbOn)
         {
             soundPermission.setEnabled(false);
-            soundPermission.setBackgroundColor(Color.GRAY);
+            soundPermission.setBackground(btn_bg_perm_disabled_selector);
             soundPermission.setText("PERMITTED");
         }
     }
@@ -115,12 +137,12 @@ public class GrantPermissionsActivity extends Activity implements View.OnClickLi
         {
             for(int i=0;i<grantResults.length;i++) {
                 if (grantResults[i] != PackageManager.PERMISSION_GRANTED)
-                    Toast.makeText(getBaseContext(), "This application will not work properly without these permissions. If you check 'Don't ask again', you may have to Uninstall Application", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "This application will not work properly without these permissions. If you check 'Don't ask again', you may have to Uninstall Application", Toast.LENGTH_SHORT).show();
             }
             if (checkAllPermissionsGranted())
             {
                 askPermission.setEnabled(false);
-                askPermission.setBackgroundColor(Color.GRAY);
+                askPermission.setBackground(btn_bg_perm_disabled_selector);
                 askPermission.setText("PERMITTED");
                 finishCheck();
             }
@@ -173,11 +195,11 @@ public class GrantPermissionsActivity extends Activity implements View.OnClickLi
             {
                 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
                 {
-                    Toast.makeText(this, "Go to  App Managment --> select app --> Power Saver --> Choose \"Allow BackGround Running\"", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Go to  App Managment --> select app --> Power Saver --> Choose \"Allow BackGround Running\"", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    Toast.makeText(this, "Go to All Apps and set LAPCS to 'Don't Optimize'", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Go to All Apps and set LAPCS to 'Don't Optimize'", Toast.LENGTH_SHORT).show();
                 }
 
                 Intent intent = new Intent();
@@ -187,7 +209,7 @@ public class GrantPermissionsActivity extends Activity implements View.OnClickLi
             else
             {
                 batteryPermission.setEnabled(false);
-                batteryPermission.setBackgroundColor(Color.GRAY);
+                batteryPermission.setBackground(btn_bg_perm_disabled_selector);
                 batteryPermission.setText("PERMITTED");
             }
         }
@@ -195,14 +217,14 @@ public class GrantPermissionsActivity extends Activity implements View.OnClickLi
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
                 isDoNotDisturbOn = mNotificationManager.isNotificationPolicyAccessGranted();
             if (!isDoNotDisturbOn) {
-                Toast.makeText(this, "Enable LAPCS", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Enable LAPCS", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS);
                 startActivity(intent);
             }
             else
             {
                 soundPermission.setEnabled(false);
-                soundPermission.setBackgroundColor(Color.GRAY);
+                soundPermission.setBackground(btn_bg_perm_disabled_selector);
                 soundPermission.setText("PERMITTED");
             }
         }
@@ -223,5 +245,21 @@ public class GrantPermissionsActivity extends Activity implements View.OnClickLi
             return false;
         }
         return super.onKeyDown(keyCode, event);
+    }
+    private boolean isAccessGranted() {
+        try {
+            PackageManager packageManager = getPackageManager();
+            ApplicationInfo applicationInfo = packageManager.getApplicationInfo(getPackageName(), 0);
+            AppOpsManager appOpsManager = (AppOpsManager) getSystemService(Context.APP_OPS_SERVICE);
+            int mode = 0;
+            if (android.os.Build.VERSION.SDK_INT > android.os.Build.VERSION_CODES.KITKAT) {
+                mode = appOpsManager.checkOpNoThrow(AppOpsManager.OPSTR_GET_USAGE_STATS,
+                        applicationInfo.uid, applicationInfo.packageName);
+            }
+            return (mode == AppOpsManager.MODE_ALLOWED);
+
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
     }
 }
